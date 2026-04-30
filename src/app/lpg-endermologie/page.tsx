@@ -159,7 +159,7 @@ export default function LpgEndermologiePage() {
               {timeline.map((item, i) => (
                 <AnimatedSection key={item.phase} delay={i * 0.1}>
                   <div className={`relative flex items-start gap-6 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                    <div className="flex-shrink-0 md:w-1/2">
+                    <div className="min-w-0 w-full md:flex-shrink-0 md:w-1/2">
                       <div className={`${i % 2 === 0 ? 'md:text-right md:pr-10' : 'md:pl-10'} pl-12 md:pl-0`}>
                         <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-[#4a1a7a]">
                           {item.phase}
