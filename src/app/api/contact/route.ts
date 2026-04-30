@@ -22,7 +22,7 @@ export async function POST(request: Request) {
       from: 'My Miracle <noreply@mymiracle.nl>',
       to: resendRecipientEmail,
       replyTo: email,
-      subject: `Nieuwe aanvraag via mymiracle.nl — ${voornaam} ${achternaam}`,
+      subject: `Nieuwe aanvraag via mymiracle.nl: ${voornaam} ${achternaam}`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; color: #1c1c1e;">
           <div style="background: #1a0a2e; padding: 32px; border-radius: 12px 12px 0 0;">

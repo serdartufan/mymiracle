@@ -7,7 +7,7 @@ import { images } from '@/data/content';
 export const metadata: Metadata = {
   title: 'Behandelingen',
   description:
-    'Ontdek de gecertificeerde LPG Endermologie behandelingen van My Miracle — voor lichaam en gezicht. Persoonlijk afgestemd op jouw doelen.',
+    'Ontdek de gecertificeerde LPG Endermologie behandelingen van My Miracle, voor lichaam en gezicht. Persoonlijk afgestemd op jouw doelen.',
 };
 
 const cards = [
@@ -137,7 +137,7 @@ export default function BehandelingenPage() {
                   <h3 className="mb-2 font-semibold text-[#1a0a2e]">Na de behandeling</h3>
                   <p className="text-sm leading-relaxed text-[#1c1c1e]/65">
                     Drink veel water om de lymfedrainage te ondersteunen. Je kunt direct je activiteiten
-                    hervatten — geen downtime.
+                    hervatten. Geen downtime.
                   </p>
                 </div>
               </div>

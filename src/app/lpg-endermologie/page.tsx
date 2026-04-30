@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 };
 
 const timeline = [
-  { phase: 'Sessie 1–3', desc: 'Huid went aan de behandeling, eerste ontspanning en verbeterde doorbloeding.' },
-  { phase: 'Sessie 4–6', desc: 'Eerste zichtbare resultaten, huid voelt soepeler en steviger aan.' },
-  { phase: 'Sessie 7–10', desc: 'Duidelijke verbetering van cellulitis en huidsteviging, zichtbaar verschil.' },
+  { phase: 'Sessie 1 tot 3', desc: 'Huid went aan de behandeling, eerste ontspanning en verbeterde doorbloeding.' },
+  { phase: 'Sessie 4 tot 6', desc: 'Eerste zichtbare resultaten, huid voelt soepeler en steviger aan.' },
+  { phase: 'Sessie 7 tot 10', desc: 'Duidelijke verbetering van cellulitis en huidsteviging, zichtbaar verschil.' },
   { phase: 'Na de kuur', desc: 'Onderhoud 1× per maand voor blijvend resultaat en optimale huidgezondheid.' },
 ];
 
@@ -49,7 +49,7 @@ export default function LpgEndermologiePage() {
             </h2>
             <p className="leading-relaxed text-[#1c1c1e]/75">
               Endermologie is een niet-invasieve techniek ontwikkeld door het Franse bedrijf LPG Systems.
-              Via mechanische stimulatie — rollers en vacuüm — worden huidcellen geactiveerd zonder
+              Via mechanische stimulatie (rollers en vacuüm) worden huidcellen geactiveerd zonder
               ingrepen of bijwerkingen. De technologie is wereldwijd de standaard in niet-chirurgische
               lichaams- en gezichtsbehandeling en werd als eerste van zijn soort erkend door de FDA
               voor cellulitisreductie.
@@ -69,11 +69,11 @@ export default function LpgEndermologiePage() {
               <h2 className="mb-6 font-serif text-4xl font-bold text-[#1a0a2e]">Hoe werkt het?</h2>
               <p className="mb-6 leading-relaxed text-[#1c1c1e]/75">
                 De Cellu M6 gebruikt een patented behandelkop met rollers die de huid zacht optillen
-                en kneden. Dit activeert fibroblasten — cellen die collageen en elastine produceren —
+                en kneden. Dit activeert fibroblasten, de cellen die collageen en elastine produceren,
                 en stimuleert lipolyse (vetafbraak) op cellulair niveau.
               </p>
               <p className="leading-relaxed text-[#1c1c1e]/75">
-                Het resultaat: stevigere huid, minder cellulitis en een verbeterde doorbloeding —
+                Het resultaat: stevigere huid, minder cellulitis en een verbeterde doorbloeding,
                 van binnenuit, zonder ingrepen.
               </p>
             </AnimatedSection>
@@ -190,7 +190,7 @@ export default function LpgEndermologiePage() {
             <p className="leading-relaxed text-[#1c1c1e]/75">
               Endermologie is 100% niet-invasief. Geen naalden, geen downtime, geen bijwerkingen op
               lange termijn. Geschikt voor alle huidtypen. Na de behandeling kan lichte roodheid
-              optreden die snel verdwijnt — dit is een normaal teken dat de doorbloeding is gestimuleerd.
+              optreden die snel verdwijnt. Dit is een normaal teken dat de doorbloeding is gestimuleerd.
             </p>
           </AnimatedSection>
         </div>

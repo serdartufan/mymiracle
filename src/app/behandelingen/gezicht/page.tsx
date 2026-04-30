@@ -53,7 +53,7 @@ export default function GezichtsBehandelingenPage() {
               Gezichtsbehandelingen
             </h1>
             <p className="max-w-xl text-lg text-white/70">
-              Anti-aging, collagenenstimulatie en een natuurlijk liftend effect — geheel niet-invasief
+              Anti-aging, collagenenstimulatie en een natuurlijk liftend effect, geheel niet-invasief
               en zonder downtime.
             </p>
           </AnimatedSection>
@@ -73,7 +73,7 @@ export default function GezichtsBehandelingenPage() {
             <p className="mb-6 leading-relaxed text-[#1c1c1e]/75">
               De LPG gezichtsbehandeling maakt gebruik van dezelfde patented Endermologie-technologie,
               maar specifiek aangepast voor het gevoelige gezichtsweefsel. De behandelkop stimuleert
-              fibroblasten — de cellen die collageen en elastine aanmaken — voor een
+              fibroblasten, de cellen die collageen en elastine aanmaken, voor een
               zichtbaar jonger en stralend resultaat.
             </p>
             <ul className="space-y-3">

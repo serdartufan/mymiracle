@@ -10,11 +10,11 @@ const faqs = [
   },
   {
     q: 'Hoe snel zie ik resultaat?',
-    a: 'De eerste resultaten zijn zichtbaar na sessie 4–6. De beste resultaten worden bereikt na de volledige kuur van 10–15 sessies. Resultaten variëren per persoon en zijn afhankelijk van levensstijl en consistentie.',
+    a: 'De eerste resultaten zijn zichtbaar na sessie 4 tot 6. De beste resultaten worden bereikt na de volledige kuur van 10 tot 15 sessies. Resultaten variëren per persoon en zijn afhankelijk van levensstijl en consistentie.',
   },
   {
     q: 'Hoeveel sessies heb ik nodig?',
-    a: 'Voor een optimaal resultaat adviseren we een kuur van 10–15 sessies, bij voorkeur 1–2 keer per week. Daarna is onderhoud van 1 sessie per maand aanbevolen om het resultaat te behouden.',
+    a: 'Voor een optimaal resultaat adviseren we een kuur van 10 tot 15 sessies, bij voorkeur 1 tot 2 keer per week. Daarna is onderhoud van 1 sessie per maand aanbevolen om het resultaat te behouden.',
   },
   {
     q: 'Kan ik direct na de behandeling werken?',

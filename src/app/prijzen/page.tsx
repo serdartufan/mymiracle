@@ -6,7 +6,7 @@ import { pricing } from '@/data/content';
 export const metadata: Metadata = {
   title: 'Prijzen',
   description:
-    'Bekijk de prijzen voor LPG Endermologie behandelingen bij My Miracle — gezicht, lichaam en kennismakingssessies. Transparant en eerlijk.',
+    'Bekijk de prijzen voor LPG Endermologie behandelingen bij My Miracle: gezicht, lichaam en kennismakingssessies. Transparant en eerlijk.',
 };
 
 function formatPrijs(prijs: number): string {
@@ -132,7 +132,7 @@ export default function PrijzenPage() {
                     </div>
                     <p className="text-sm leading-relaxed text-[#1c1c1e]/70">
                       Maak kennis met de behandeling en ontvang persoonlijk advies. We bespreken jouw
-                      doelen en stellen samen een behandelplan op — geheel vrijblijvend.
+                      doelen en stellen samen een behandelplan op, geheel vrijblijvend.
                     </p>
                   </div>
                   <Link

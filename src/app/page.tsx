@@ -66,7 +66,7 @@ const trustItems = [
 const treatmentCards = [
   {
     title: 'Lichaamsbehandelingen',
-    desc: 'Cellulitisreductie, vetvermindering en huidverstevigend. Zichtbaar resultaat na 6–10 sessies.',
+    desc: 'Cellulitisreductie, vetvermindering en huidverstevigend. Zichtbaar resultaat na 6 tot 10 sessies.',
     href: '/behandelingen/lichaam',
     img: images.behandelingenBody,
     alt: 'LPG lichaamsbehandeling cellulitis reductie',
@@ -146,7 +146,7 @@ export default function HomePage() {
               Voel je beter.<br />Zie het verschil.
             </h1>
             <p className="mx-auto mb-10 max-w-xl text-lg leading-relaxed text-white/75">
-              Gecertificeerde LPG Endermologie behandelingen bij My Miracle — voor lichaam en gezicht.
+              Gecertificeerde LPG Endermologie behandelingen bij My Miracle, voor lichaam en gezicht.
             </p>
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link
@@ -203,7 +203,7 @@ export default function HomePage() {
             <p className="mb-6 leading-relaxed text-[#1c1c1e]/75">
               LPG Endermologie is een wetenschappelijk bewezen, niet-invasieve techniek die het lichaam
               stimuleert om van binnenuit te werken. Met de patented Endermologie®-technologie worden
-              huidcellen diep gemasseerd — wat leidt tot afname van cellulitis, versteviging van de huid
+              huidcellen diep gemasseerd, wat leidt tot afname van cellulitis, versteviging van de huid
               en vermindering van vet.
             </p>
             <p className="mb-8 leading-relaxed text-[#1c1c1e]/75">
@@ -334,7 +334,7 @@ export default function HomePage() {
                   <StarRating />
                   <p className="mt-5 flex-1 text-sm leading-relaxed text-[#1c1c1e]/80">"{t.quote}"</p>
                   <footer className="mt-6 border-t border-[#d4a8b8]/30 pt-4 text-xs font-semibold uppercase tracking-widest text-[#4a1a7a]">
-                    — {t.author}
+                    {t.author}
                   </footer>
                 </blockquote>
               </AnimatedSection>

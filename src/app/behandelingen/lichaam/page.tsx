@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 const benefits = [
-  'Afname van cellulitis (zichtbaar na 6–10 sessies)',
+  'Afname van cellulitis (zichtbaar na 6 tot 10 sessies)',
   'Vermindering van plaatselijk vet',
   'Versteviging en soepelheid van de huid',
   'Verbeterde bloedsomloop en lymfedrainage',
@@ -52,7 +52,7 @@ export default function LichaamsBehandelingenPage() {
               Lichaamsbehandelingen
             </h1>
             <p className="max-w-xl text-lg text-white/70">
-              Wetenschappelijk bewezen cellulitisreductie, vetvermindering en huidverstevigend —
+              Wetenschappelijk bewezen cellulitisreductie, vetvermindering en huidverstevigend,
               zonder injecties of downtime.
             </p>
           </AnimatedSection>
@@ -107,7 +107,7 @@ export default function LichaamsBehandelingenPage() {
           <AnimatedSection>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               {[
-                { label: 'Aanbevolen kuur', value: '10–15 sessies, 1–2× per week' },
+                { label: 'Aanbevolen kuur', value: '10 tot 15 sessies, 1 tot 2 keer per week' },
                 { label: 'Onderhoud', value: '1× per maand' },
                 { label: 'Sessieduur', value: 'ca. 35 minuten' },
                 { label: 'Behandelpak', value: 'Wordt ter plaatse verstrekt' },
@@ -181,7 +181,7 @@ export default function LichaamsBehandelingenPage() {
               <p className="leading-relaxed text-[#1c1c1e]/75">
                 In sommige situaties is LPG niet aanbevolen, waaronder tijdens zwangerschap, bij actieve
                 infecties, gebruik van bloedverdunners of bepaalde huidaandoeningen. Twijfel je? Neem
-                gerust contact op — we kijken het samen met je door.
+                gerust contact op. We kijken het samen met je door.
               </p>
             </div>
           </AnimatedSection>

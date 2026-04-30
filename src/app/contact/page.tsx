@@ -82,7 +82,7 @@ export default function ContactPage() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Locatie My Miracle — Knobbelzwaansingel 109, Den Haag"
+                title="Locatie My Miracle, Knobbelzwaansingel 109, Den Haag"
               />
             </div>
           </AnimatedSection>

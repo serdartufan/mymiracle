@@ -58,7 +58,7 @@ export default function OverMijPage() {
               <p>
                 {ownerName} is gecertificeerd LPG Endermologie therapeut en richtte My Miracle op vanuit
                 een persoonlijke passie voor welzijn en huidverbetering. Na jarenlange ervaring in de
-                schoonheids- en wellnesssector specialiseerde zij zich volledig in LPG Endermologie —
+                schoonheids- en wellnesssector specialiseerde zij zich volledig in LPG Endermologie,
                 de meest wetenschappelijk onderbouwde niet-invasieve behandeling op de markt.
               </p>
               <p>
@@ -67,7 +67,7 @@ export default function OverMijPage() {
                 juiste aanpak bepalen.
               </p>
               <p>
-                Ik geloof dat schoonheid van binnenuit komt — en dat wetenschappelijk bewezen technieken
+                Ik geloof dat schoonheid van binnenuit komt, en dat wetenschappelijk bewezen technieken
                 de meest eerlijke weg zijn naar zichtbaar en duurzaam resultaat.
               </p>
             </div>
