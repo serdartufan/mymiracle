@@ -4,25 +4,20 @@ import { useState } from 'react';
 
 type Status = 'idle' | 'loading' | 'success' | 'error';
 
-const behandelingOpties = [
-  'Lichaamsbehandeling',
-  'Gezichtsbehandeling',
-  'Kennismaking',
-  'Anders',
-];
-
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>('idle');
   const [form, setForm] = useState({
-    naam: '',
+    geslacht: '',
+    voornaam: '',
+    achternaam: '',
+    telefoonnummer: '',
     email: '',
-    telefoon: '',
-    behandeling: '',
-    bericht: '',
+    geboortedatum: '',
+    toelichting: '',
   });
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -45,6 +40,9 @@ export default function ContactForm() {
   const inputClass =
     'w-full rounded-xl border border-[#d4a8b8]/30 bg-white/80 px-4 py-3 text-sm text-[#1c1c1e] placeholder-[#1c1c1e]/40 outline-none transition focus:border-[#4a1a7a] focus:ring-2 focus:ring-[#4a1a7a]/20';
 
+  const labelClass = 'mb-1.5 block text-sm font-medium text-[#1c1c1e]';
+  const required = <span className="text-[#4a1a7a]"> *</span>;
+
   if (status === 'success') {
     return (
       <div className="rounded-2xl border border-[#d4a8b8]/40 bg-[#d4a8b8]/10 p-10 text-center">
@@ -53,9 +51,9 @@ export default function ContactForm() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="mb-2 text-xl font-serif font-semibold text-[#1a0a2e]">Bericht ontvangen!</h3>
+        <h3 className="mb-2 font-serif text-xl font-semibold text-[#1a0a2e]">Aanvraag ontvangen!</h3>
         <p className="text-sm text-[#1c1c1e]/70">
-          Bedankt voor je bericht. We nemen zo snel mogelijk contact met je op.
+          Bedankt voor uw aanvraag! Kader neemt zo snel mogelijk contact met u op.
         </p>
       </div>
     );
@@ -63,24 +61,82 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+      {/* Geslacht */}
       <div>
-        <label htmlFor="naam" className="mb-1.5 block text-sm font-medium text-[#1c1c1e]">
-          Naam <span className="text-[#4a1a7a]">*</span>
+        <p className={labelClass}>Geslacht{required}</p>
+        <div className="flex gap-6">
+          {(['Vrouw', 'Man'] as const).map((opt) => (
+            <label key={opt} className="flex cursor-pointer items-center gap-2 text-sm text-[#1c1c1e]">
+              <input
+                type="radio"
+                name="geslacht"
+                value={opt}
+                required
+                checked={form.geslacht === opt}
+                onChange={handleChange}
+                className="h-4 w-4 accent-[#4a1a7a]"
+              />
+              {opt}
+            </label>
+          ))}
+        </div>
+      </div>
+
+      {/* Voornaam + Achternaam */}
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div>
+          <label htmlFor="voornaam" className={labelClass}>
+            Voornaam{required}
+          </label>
+          <input
+            id="voornaam"
+            name="voornaam"
+            type="text"
+            required
+            value={form.voornaam}
+            onChange={handleChange}
+            placeholder="Voornaam"
+            className={inputClass}
+          />
+        </div>
+        <div>
+          <label htmlFor="achternaam" className={labelClass}>
+            Achternaam{required}
+          </label>
+          <input
+            id="achternaam"
+            name="achternaam"
+            type="text"
+            required
+            value={form.achternaam}
+            onChange={handleChange}
+            placeholder="Achternaam"
+            className={inputClass}
+          />
+        </div>
+      </div>
+
+      {/* Telefoonnummer */}
+      <div>
+        <label htmlFor="telefoonnummer" className={labelClass}>
+          Telefoonnummer{required}
         </label>
         <input
-          id="naam"
-          name="naam"
-          type="text"
+          id="telefoonnummer"
+          name="telefoonnummer"
+          type="tel"
           required
-          value={form.naam}
+          value={form.telefoonnummer}
           onChange={handleChange}
-          placeholder="Jouw volledige naam"
+          placeholder="+31 6 xx xx xx xx"
           className={inputClass}
         />
       </div>
+
+      {/* E-mailadres */}
       <div>
-        <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-[#1c1c1e]">
-          E-mail <span className="text-[#4a1a7a]">*</span>
+        <label htmlFor="email" className={labelClass}>
+          E-mailadres{required}
         </label>
         <input
           id="email"
@@ -89,73 +145,62 @@ export default function ContactForm() {
           required
           value={form.email}
           onChange={handleChange}
-          placeholder="jouw@email.be"
+          placeholder="uw@email.nl"
           className={inputClass}
         />
       </div>
+
+      {/* Geboortedatum */}
       <div>
-        <label htmlFor="telefoon" className="mb-1.5 block text-sm font-medium text-[#1c1c1e]">
-          Telefoon
+        <label htmlFor="geboortedatum" className={labelClass}>
+          Geboortedatum{required}
         </label>
         <input
-          id="telefoon"
-          name="telefoon"
-          type="tel"
-          value={form.telefoon}
+          id="geboortedatum"
+          name="geboortedatum"
+          type="date"
+          required
+          value={form.geboortedatum}
           onChange={handleChange}
-          placeholder="+32 xxx xxx xxx"
           className={inputClass}
         />
+        <p className="mt-1.5 text-xs leading-relaxed text-[#1c1c1e]/55">
+          Voor een aantal behandelingen gelden minimumleeftijden. We zijn daarom verplicht uw leeftijd te registreren.
+        </p>
       </div>
+
+      {/* Toelichting */}
       <div>
-        <label htmlFor="behandeling" className="mb-1.5 block text-sm font-medium text-[#1c1c1e]">
-          Interesse in
-        </label>
-        <select
-          id="behandeling"
-          name="behandeling"
-          value={form.behandeling}
-          onChange={handleChange}
-          className={inputClass}
-        >
-          <option value="">Selecteer een behandeling</option>
-          {behandelingOpties.map((opt) => (
-            <option key={opt} value={opt}>
-              {opt}
-            </option>
-          ))}
-        </select>
-      </div>
-      <div>
-        <label htmlFor="bericht" className="mb-1.5 block text-sm font-medium text-[#1c1c1e]">
-          Bericht <span className="text-[#4a1a7a]">*</span>
+        <label htmlFor="toelichting" className={labelClass}>
+          Toelichting
         </label>
         <textarea
-          id="bericht"
-          name="bericht"
-          rows={5}
-          required
-          value={form.bericht}
+          id="toelichting"
+          name="toelichting"
+          rows={4}
+          value={form.toelichting}
           onChange={handleChange}
-          placeholder="Stel gerust je vraag of vertel ons wat je doelstellingen zijn..."
+          placeholder="Heeft u nog vragen of aanvullende informatie?"
           className={`${inputClass} resize-none`}
         />
       </div>
+
       {status === 'error' && (
         <p className="rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700">
           Er is iets misgegaan. Probeer het opnieuw of stuur een e-mail naar{' '}
-          <a href="mailto:info@mymiracle.be" className="underline">
-            info@mymiracle.be
+          <a href="mailto:kader@mymiracle.nl" className="underline">
+            kader@mymiracle.nl
           </a>
           .
         </p>
       )}
+
       <button
         type="submit"
         disabled={status === 'loading'}
         className="w-full rounded-full bg-[#4a1a7a] px-8 py-4 text-sm font-semibold text-white transition-colors hover:bg-[#5e2490] disabled:opacity-60"
       >
-        {status === 'loading' ? 'Versturen...' : 'Verstuur bericht'}
+        {status === 'loading' ? 'Versturen...' : 'Stuur aanvraag in'}
       </button>
     </form>
   );

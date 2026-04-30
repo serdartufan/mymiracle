@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 function formatPrijs(prijs: number): string {
-  return prijs === 0 ? 'Op aanvraag' : `€ ${prijs}`;
+  return prijs === 0 ? 'Gratis' : `€ ${prijs}`;
 }
 
 export default function PrijzenPage() {
@@ -52,12 +52,6 @@ export default function PrijzenPage() {
                         {formatPrijs(pricing.gezicht.losseSessionPrijs)}
                       </span>
                     </li>
-                    <li className="flex items-center justify-between border-b border-[#faf7f4] pb-4">
-                      <span className="text-sm text-[#1c1c1e]/80">{pricing.gezicht.kuur5Label}</span>
-                      <span className="font-semibold text-[#1a0a2e]">
-                        {formatPrijs(pricing.gezicht.kuur5Prijs)}
-                      </span>
-                    </li>
                     <li className="flex items-center justify-between rounded-xl bg-[#4a1a7a]/5 px-3 py-3">
                       <div>
                         <span className="block text-sm font-medium text-[#1a0a2e]">
@@ -95,12 +89,6 @@ export default function PrijzenPage() {
                       <span className="text-sm text-[#1c1c1e]/80">{pricing.lichaam.losseSessionLabel}</span>
                       <span className="font-semibold text-[#1a0a2e]">
                         {formatPrijs(pricing.lichaam.losseSessionPrijs)}
-                      </span>
-                    </li>
-                    <li className="flex items-center justify-between border-b border-[#faf7f4] pb-4">
-                      <span className="text-sm text-[#1c1c1e]/80">{pricing.lichaam.kuur5Label}</span>
-                      <span className="font-semibold text-[#1a0a2e]">
-                        {formatPrijs(pricing.lichaam.kuur5Prijs)}
                       </span>
                     </li>
                     <li className="flex items-center justify-between rounded-xl bg-[#4a1a7a]/5 px-3 py-3">
