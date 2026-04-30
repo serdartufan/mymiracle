@@ -39,7 +39,7 @@ export default function BehandelingenPage() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-[#d4a8b8]">
               Ons aanbod
             </p>
-            <h1 className="mb-4 font-serif text-5xl font-bold text-white md:text-6xl">Behandelingen</h1>
+            <h1 className="mb-4 font-serif text-4xl font-bold text-white sm:text-5xl md:text-6xl">Behandelingen</h1>
             <p className="max-w-xl text-lg text-white/70">
               Bij My Miracle bieden we gecertificeerde LPG Endermologie behandelingen voor lichaam en
               gezicht. Elke behandeling is afgestemd op jouw persoonlijke doelen.

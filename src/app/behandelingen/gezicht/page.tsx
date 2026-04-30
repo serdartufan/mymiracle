@@ -49,7 +49,7 @@ export default function GezichtsBehandelingenPage() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-[#d4a8b8]">
               LPG Endermologie
             </p>
-            <h1 className="mb-4 font-serif text-5xl font-bold text-white md:text-6xl">
+            <h1 className="mb-4 font-serif text-4xl font-bold text-white sm:text-5xl md:text-6xl">
               Gezichtsbehandelingen
             </h1>
             <p className="max-w-xl text-lg text-white/70">
