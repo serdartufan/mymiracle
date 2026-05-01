@@ -3,7 +3,7 @@ export const siteUrl = 'https://mymiracle.nl';
 export const ownerName = 'Kader Tufan';
 
 export const contactInfo = {
-  address: 'Knobbelzwaansingel 109, 2496 LN Den Haag',
+  address: 'Bezuidenhoutseweg 161, 2594 AG Den Haag',
   email: 'kader@mymiracle.nl',
   openingHours: 'Op afspraak',
 };
