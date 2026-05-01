@@ -5,9 +5,7 @@ import { contactInfo } from '@/data/content';
 const footerLinks = [
   { label: 'Home', href: '/' },
   { label: 'Over Mij', href: '/over-mij' },
-  { label: 'Behandelingen', href: '/behandelingen' },
-  { label: 'Lichaamsbehandelingen', href: '/behandelingen/lichaam' },
-  { label: 'Gezichtsbehandelingen', href: '/behandelingen/gezicht' },
+  { label: 'Behandeling', href: '/behandelingen' },
   { label: 'LPG Endermologie', href: '/lpg-endermologie' },
   { label: 'Prijzen', href: '/prijzen' },
   { label: 'Contact', href: '/contact' },

@@ -11,21 +11,15 @@ export const contactInfo = {
 export const resendRecipientEmail = 'kader@mymiracle.nl';
 
 export const pricing = {
-  gezicht: {
-    losseSessionLabel: 'Losse sessie gezicht',
-    losseSessionPrijs: 85,
-    kuur10Label: 'Kuur 10 sessies gezicht',
-    kuur10Prijs: 800,
-  },
-  lichaam: {
-    losseSessionLabel: 'Losse sessie lichaam',
-    losseSessionPrijs: 85,
-    kuur10Label: 'Kuur 10 sessies lichaam',
+  behandeling: {
+    losseSessionLabel: 'Losse sessie',
+    losseSessionPrijs: 80,
+    kuur10Label: 'Kuur 10 sessies',
     kuur10Prijs: 800,
   },
   kennismaking: {
     label: 'Kennismakingssessie',
-    prijs: 0, // gratis
+    prijs: 0,
   },
 };
 

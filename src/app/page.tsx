@@ -63,27 +63,18 @@ const trustItems = [
   },
 ];
 
-const treatmentCards = [
+const behandelingResultaten = [
   {
-    title: 'Lichaamsbehandelingen',
-    desc: 'Cellulitisreductie, vetvermindering en huidverstevigend. Zichtbaar resultaat na 6 tot 10 sessies.',
-    href: '/behandelingen/lichaam',
+    label: 'Lichaam',
+    items: ['Afname van cellulitis', 'Plaatselijke vetvermindering', 'Stevigere huid'],
     img: images.behandelingenBody,
-    alt: 'LPG lichaamsbehandeling cellulitis reductie',
+    alt: 'LPG lichaamsbehandeling',
   },
   {
-    title: 'Gezichtsbehandelingen',
-    desc: 'Anti-aging, liftend effect en een stralende, egale huidtint. Stimuleert collageen van binnenuit.',
-    href: '/behandelingen/gezicht',
+    label: 'Gezicht',
+    items: ['Stimuleert collageen', 'Liftend effect', 'Stralende huidtint'],
     img: images.behandelingenFace,
-    alt: 'LPG gezichtsbehandeling anti-aging lifting',
-  },
-  {
-    title: 'Welzijnsbehandelingen',
-    desc: 'Diepe ontspanning, betere doorbloeding en herstel. Goed voor lichaam én geest.',
-    href: '/behandelingen',
-    img: images.wellness,
-    alt: 'Welzijnsbehandeling ontspanning doorbloeding',
+    alt: 'LPG gezichtsbehandeling',
   },
 ];
 
@@ -234,47 +225,58 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Treatment cards ── */}
+      {/* Behandeling sectie */}
       <section className="bg-[#faf7f4] py-20">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
           <AnimatedSection className="mb-14 text-center">
             <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-[#4a1a7a]">
-              Ons aanbod
+              LPG Endermologie
             </p>
-            <h2 className="font-serif text-4xl font-bold text-[#1a0a2e] md:text-5xl">Onze behandelingen</h2>
+            <h2 className="mb-4 font-serif text-4xl font-bold text-[#1a0a2e] md:text-5xl">Één behandeling, persoonlijk afgestemd</h2>
+            <p className="mx-auto max-w-2xl text-[#1c1c1e]/65 leading-relaxed">
+              Bij My Miracle werken we met één gecertificeerde methode: LPG Endermologie. Welk gebied we behandelen en hoe we de aanpak afstemmen, bepalen we samen tijdens de intake.
+            </p>
           </AnimatedSection>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            {treatmentCards.map((card, i) => (
-              <AnimatedSection key={card.title} delay={i * 0.12}>
-                <article className="group relative overflow-hidden rounded-2xl border border-[#4a1a7a]/12 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                  <div className="absolute top-0 left-0 right-0 h-0.5 bg-[#4a1a7a]" />
-                  <div className="relative h-52 overflow-hidden">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+            {behandelingResultaten.map((r, i) => (
+              <AnimatedSection key={r.label} delay={i * 0.1}>
+                <article className="overflow-hidden rounded-3xl border border-[#d4a8b8]/30 bg-white shadow-sm">
+                  <div className="relative h-56 overflow-hidden">
                     <Image
-                      src={card.img}
-                      alt={card.alt}
+                      src={r.img}
+                      alt={r.alt}
                       fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1a0a2e]/50 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1a0a2e]/60 to-transparent" />
+                    <h3 className="absolute bottom-5 left-6 font-serif text-2xl font-bold text-white">{r.label}</h3>
                   </div>
-                  <div className="p-6">
-                    <h3 className="mb-2 font-serif text-xl font-semibold text-[#1a0a2e]">{card.title}</h3>
-                    <p className="mb-5 text-sm leading-relaxed text-[#1c1c1e]/65">{card.desc}</p>
-                    <Link
-                      href={card.href}
-                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#4a1a7a] transition-all hover:gap-3"
-                    >
-                      Meer info
-                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </Link>
+                  <div className="p-8">
+                    <ul className="space-y-2">
+                      {r.items.map((item) => (
+                        <li key={item} className="flex items-center gap-3 text-sm text-[#1c1c1e]/75">
+                          <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#d4a8b8]" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </article>
               </AnimatedSection>
             ))}
           </div>
+          <AnimatedSection className="mt-10 text-center">
+            <Link
+              href="/behandelingen"
+              className="inline-flex items-center gap-2 rounded-full bg-[#4a1a7a] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#5e2490]"
+            >
+              Meer over de behandeling
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </AnimatedSection>
         </div>
       </section>
 

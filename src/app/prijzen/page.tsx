@@ -6,7 +6,7 @@ import { pricing } from '@/data/content';
 export const metadata: Metadata = {
   title: 'Prijzen',
   description:
-    'Bekijk de prijzen voor LPG Endermologie behandelingen bij My Miracle: gezicht, lichaam en kennismakingssessies. Transparant en eerlijk.',
+    'Bekijk de prijzen voor LPG Endermologie behandelingen bij My Miracle. Transparant en eerlijk geprijsd.',
 };
 
 function formatPrijs(prijs: number): string {
@@ -16,7 +16,6 @@ function formatPrijs(prijs: number): string {
 export default function PrijzenPage() {
   return (
     <>
-      {/* Hero */}
       <section className="bg-[#1a0a2e] pb-20 pt-36">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
           <AnimatedSection>
@@ -28,42 +27,35 @@ export default function PrijzenPage() {
         </div>
       </section>
 
-      {/* Pricing cards */}
       <section className="bg-[#faf7f4] py-20">
-        <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="mx-auto max-w-4xl px-4 md:px-8">
+          <AnimatedSection>
+            <p className="mb-12 text-center text-lg leading-relaxed text-[#1c1c1e]/70">
+              Bij My Miracle is er één behandeling: LPG Endermologie. Welk gebied behandeld wordt, bepalen we samen tijdens de intake op basis van jouw doelen.
+            </p>
+          </AnimatedSection>
 
-            {/* Gezicht */}
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <AnimatedSection delay={0}>
               <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-[#d4a8b8]/40 bg-white shadow-sm">
                 <div className="bg-[#faf7f4] px-8 py-6">
-                  <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-[#4a1a7a]">
-                    Gezicht
-                  </p>
+                  <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-[#4a1a7a]">Flexibel</p>
                   <h2 className="font-serif text-2xl font-bold text-[#1a0a2e]">
-                    Gezichtsbehandeling
+                    {pricing.behandeling.losseSessionLabel}
                   </h2>
                 </div>
                 <div className="flex flex-1 flex-col p-8">
-                  <ul className="flex-1 space-y-4">
-                    <li className="flex items-center justify-between border-b border-[#faf7f4] pb-4">
-                      <span className="text-sm text-[#1c1c1e]/80">{pricing.gezicht.losseSessionLabel}</span>
-                      <span className="font-semibold text-[#1a0a2e]">
-                        {formatPrijs(pricing.gezicht.losseSessionPrijs)}
-                      </span>
-                    </li>
-                    <li className="flex items-center justify-between rounded-xl bg-[#4a1a7a]/5 px-3 py-3">
-                      <div>
-                        <span className="block text-sm font-medium text-[#1a0a2e]">
-                          {pricing.gezicht.kuur10Label}
-                        </span>
-                        <span className="text-xs font-semibold text-[#4a1a7a]">Meest populair</span>
-                      </div>
-                      <span className="font-bold text-[#4a1a7a]">
-                        {formatPrijs(pricing.gezicht.kuur10Prijs)}
-                      </span>
-                    </li>
-                  </ul>
+                  <div className="flex-1">
+                    <div className="mb-6 rounded-xl bg-[#faf7f4] px-6 py-5 text-center">
+                      <p className="font-serif text-4xl font-bold text-[#1a0a2e]">
+                        {formatPrijs(pricing.behandeling.losseSessionPrijs)}
+                      </p>
+                      <p className="mt-1 text-sm text-[#1c1c1e]/55">per sessie</p>
+                    </div>
+                    <p className="text-sm leading-relaxed text-[#1c1c1e]/70">
+                      Ideaal om de behandeling te leren kennen of af te wisselen op jouw eigen tempo.
+                    </p>
+                  </div>
                   <Link
                     href="/contact"
                     className="mt-8 block rounded-full border-2 border-[#4a1a7a] px-6 py-3 text-center text-sm font-semibold text-[#4a1a7a] transition-colors hover:bg-[#4a1a7a] hover:text-white"
@@ -74,35 +66,28 @@ export default function PrijzenPage() {
               </div>
             </AnimatedSection>
 
-            {/* Lichaam */}
             <AnimatedSection delay={0.1}>
               <div className="flex h-full flex-col overflow-hidden rounded-3xl border-2 border-[#4a1a7a] bg-white shadow-md">
                 <div className="bg-[#4a1a7a] px-8 py-6">
-                  <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-[#d4a8b8]">
-                    Lichaam
-                  </p>
-                  <h2 className="font-serif text-2xl font-bold text-white">Lichaamsbehandeling</h2>
+                  <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-[#d4a8b8]">Meest populair</p>
+                  <h2 className="font-serif text-2xl font-bold text-white">
+                    {pricing.behandeling.kuur10Label}
+                  </h2>
                 </div>
                 <div className="flex flex-1 flex-col p-8">
-                  <ul className="flex-1 space-y-4">
-                    <li className="flex items-center justify-between border-b border-[#faf7f4] pb-4">
-                      <span className="text-sm text-[#1c1c1e]/80">{pricing.lichaam.losseSessionLabel}</span>
-                      <span className="font-semibold text-[#1a0a2e]">
-                        {formatPrijs(pricing.lichaam.losseSessionPrijs)}
-                      </span>
-                    </li>
-                    <li className="flex items-center justify-between rounded-xl bg-[#4a1a7a]/5 px-3 py-3">
-                      <div>
-                        <span className="block text-sm font-medium text-[#1a0a2e]">
-                          {pricing.lichaam.kuur10Label}
-                        </span>
-                        <span className="text-xs font-semibold text-[#4a1a7a]">Meest populair</span>
-                      </div>
-                      <span className="font-bold text-[#4a1a7a]">
-                        {formatPrijs(pricing.lichaam.kuur10Prijs)}
-                      </span>
-                    </li>
-                  </ul>
+                  <div className="flex-1">
+                    <div className="mb-6 rounded-xl bg-[#4a1a7a]/5 px-6 py-5 text-center">
+                      <p className="font-serif text-4xl font-bold text-[#4a1a7a]">
+                        {formatPrijs(pricing.behandeling.kuur10Prijs)}
+                      </p>
+                      <p className="mt-1 text-sm text-[#1c1c1e]/55">
+                        {formatPrijs(pricing.behandeling.kuur10Prijs / 10)} per sessie
+                      </p>
+                    </div>
+                    <p className="text-sm leading-relaxed text-[#1c1c1e]/70">
+                      Voor het beste resultaat. Een kuur van 10 sessies geeft de meest zichtbare en blijvende verbetering. Resultaat is al merkbaar vanaf sessie 6.
+                    </p>
+                  </div>
                   <Link
                     href="/contact"
                     className="mt-8 block rounded-full bg-[#4a1a7a] px-6 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-[#5e2490]"
@@ -112,64 +97,51 @@ export default function PrijzenPage() {
                 </div>
               </div>
             </AnimatedSection>
+          </div>
 
-            {/* Kennismaking */}
-            <AnimatedSection delay={0.2}>
-              <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-[#d4a8b8]/40 bg-white shadow-sm">
-                <div className="bg-[#faf7f4] px-8 py-6">
-                  <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-[#4a1a7a]">
-                    Start hier
+          <AnimatedSection delay={0.2}>
+            <div className="mt-8 overflow-hidden rounded-3xl border border-[#d4a8b8]/40 bg-white shadow-sm">
+              <div className="flex flex-col items-center gap-6 p-8 md:flex-row">
+                <div className="flex-1">
+                  <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-[#4a1a7a]">Start hier</p>
+                  <h2 className="mb-2 font-serif text-2xl font-bold text-[#1a0a2e]">
+                    {pricing.kennismaking.label}
+                  </h2>
+                  <p className="text-sm leading-relaxed text-[#1c1c1e]/70">
+                    Maak vrijblijvend kennis met de behandeling en ontvang persoonlijk advies. We bespreken jouw doelen en bepalen samen welk gebied en welke aanpak het beste bij jou past.
                   </p>
-                  <h2 className="font-serif text-2xl font-bold text-[#1a0a2e]">Kennismaking</h2>
                 </div>
-                <div className="flex flex-1 flex-col p-8">
-                  <div className="flex-1">
-                    <div className="mb-6 rounded-xl bg-[#d4a8b8]/15 p-6 text-center">
-                      <p className="mb-1 text-xs text-[#1c1c1e]/60">{pricing.kennismaking.label}</p>
-                      <p className="font-serif text-3xl font-bold text-[#4a1a7a]">
-                        {formatPrijs(pricing.kennismaking.prijs)}
-                      </p>
-                    </div>
-                    <p className="text-sm leading-relaxed text-[#1c1c1e]/70">
-                      Maak kennis met de behandeling en ontvang persoonlijk advies. We bespreken jouw
-                      doelen en stellen samen een behandelplan op, geheel vrijblijvend.
-                    </p>
-                  </div>
+                <div className="flex flex-col items-center gap-4 md:items-end">
+                  <p className="font-serif text-4xl font-bold text-[#4a1a7a]">
+                    {formatPrijs(pricing.kennismaking.prijs)}
+                  </p>
                   <Link
                     href="/contact"
-                    className="mt-8 block rounded-full border-2 border-[#4a1a7a] px-6 py-3 text-center text-sm font-semibold text-[#4a1a7a] transition-colors hover:bg-[#4a1a7a] hover:text-white"
+                    className="whitespace-nowrap rounded-full border-2 border-[#4a1a7a] px-6 py-3 text-center text-sm font-semibold text-[#4a1a7a] transition-colors hover:bg-[#4a1a7a] hover:text-white"
                   >
                     Plan kennismaking
                   </Link>
                 </div>
               </div>
-            </AnimatedSection>
-          </div>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
-      {/* Fine print */}
       <section className="bg-[#faf7f4] py-10">
         <div className="mx-auto max-w-3xl px-4 text-center md:px-8">
           <AnimatedSection>
             <p className="text-sm leading-relaxed text-[#1c1c1e]/55">
-              Alle prijzen zijn inclusief BTW. Kuren zijn persoonsgebonden en niet overdraagbaar. Bij
-              annulering tot 24 uur voor de afspraak worden geen kosten in rekening gebracht. Bij
-              no-show of te late annulering kan een vergoeding worden gevraagd.
+              Alle prijzen zijn inclusief BTW. Kuren zijn persoonsgebonden en niet overdraagbaar. Bij annulering tot 24 uur voor de afspraak worden geen kosten in rekening gebracht. Bij no-show of te late annulering kan een vergoeding worden gevraagd.
             </p>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* CTA */}
       <section className="bg-gradient-to-br from-[#4a1a7a] to-[#2d0f54] py-20 text-center">
         <AnimatedSection className="mx-auto max-w-xl px-4">
-          <h2 className="mb-4 font-serif text-3xl font-bold text-white md:text-4xl">
-            Twijfel je nog?
-          </h2>
-          <p className="mb-8 text-white/75">
-            Plan een vrijblijvende kennismaking en we beantwoorden al je vragen.
-          </p>
+          <h2 className="mb-4 font-serif text-3xl font-bold text-white md:text-4xl">Twijfel je nog?</h2>
+          <p className="mb-8 text-white/75">Plan een vrijblijvende kennismaking en we beantwoorden al je vragen.</p>
           <Link
             href="/contact"
             className="inline-block rounded-full border-2 border-white bg-white px-8 py-3.5 text-sm font-semibold text-[#4a1a7a] transition-all hover:bg-transparent hover:text-white"
