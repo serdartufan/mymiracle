@@ -9,10 +9,6 @@ export const metadata: Metadata = {
     'Bekijk de prijzen voor LPG Endermologie behandelingen bij My Miracle. Transparant en eerlijk geprijsd.',
 };
 
-function formatPrijs(prijs: number): string {
-  return prijs === 0 ? 'Gratis' : `€ ${prijs}`;
-}
-
 export default function PrijzenPage() {
   return (
     <>
@@ -31,30 +27,37 @@ export default function PrijzenPage() {
         <div className="mx-auto max-w-4xl px-4 md:px-8">
           <AnimatedSection>
             <p className="mb-12 text-center text-lg leading-relaxed text-[#1c1c1e]/70">
-              Bij My Miracle is er één behandeling: LPG Endermologie. Welk gebied behandeld wordt, bepalen we samen tijdens de intake op basis van jouw doelen.
+              Bij My Miracle is er één behandeling: LPG Endermologie. De behandelduur kiezen we samen op basis van jouw doelen en het te behandelen gebied.
             </p>
           </AnimatedSection>
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+            {/* Losse Behandeling */}
             <AnimatedSection delay={0}>
               <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-[#d4a8b8]/40 bg-white shadow-sm">
                 <div className="bg-[#faf7f4] px-8 py-6">
-                  <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-[#4a1a7a]">Flexibel</p>
+                  <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-[#4a1a7a]">
+                    Flexibel
+                  </p>
                   <h2 className="font-serif text-2xl font-bold text-[#1a0a2e]">
-                    {pricing.behandeling.losseSessionLabel}
+                    {pricing.losseBehandeling.label}
                   </h2>
                 </div>
                 <div className="flex flex-1 flex-col p-8">
-                  <div className="flex-1">
-                    <div className="mb-6 rounded-xl bg-[#faf7f4] px-6 py-5 text-center">
-                      <p className="font-serif text-4xl font-bold text-[#1a0a2e]">
-                        {formatPrijs(pricing.behandeling.losseSessionPrijs)}
-                      </p>
-                      <p className="mt-1 text-sm text-[#1c1c1e]/55">per sessie</p>
-                    </div>
-                    <p className="text-sm leading-relaxed text-[#1c1c1e]/70">
-                      Ideaal om de behandeling te leren kennen of af te wisselen op jouw eigen tempo.
-                    </p>
+                  <div className="flex-1 space-y-3">
+                    {pricing.losseBehandeling.sessies.map((s) => (
+                      <div
+                        key={s.minuten}
+                        className="flex items-center justify-between rounded-xl bg-[#faf7f4] px-5 py-3"
+                      >
+                        <span className="text-sm font-medium text-[#1c1c1e]/70">
+                          {s.minuten} minuten
+                        </span>
+                        <span className="font-serif text-xl font-bold text-[#1a0a2e]">
+                          € {s.prijs},-
+                        </span>
+                      </div>
+                    ))}
                   </div>
                   <Link
                     href="/contact"
@@ -66,31 +69,42 @@ export default function PrijzenPage() {
               </div>
             </AnimatedSection>
 
+            {/* Kuur Pakket */}
             <AnimatedSection delay={0.1}>
               <div className="flex h-full flex-col overflow-hidden rounded-3xl border-2 border-[#4a1a7a] bg-white shadow-md">
                 <div className="bg-[#4a1a7a] px-8 py-6">
-                  <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-[#d4a8b8]">Meest populair</p>
+                  <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-[#d4a8b8]">
+                    Meest populair
+                  </p>
                   <h2 className="font-serif text-2xl font-bold text-white">
-                    {pricing.behandeling.kuur10Label}
+                    {pricing.kuurPakket.label}
                   </h2>
+                  <p className="mt-1 text-sm text-[#d4a8b8]/80">
+                    {pricing.kuurPakket.omschrijving}
+                  </p>
                 </div>
                 <div className="flex flex-1 flex-col p-8">
-                  <div className="flex-1">
-                    <div className="mb-6 rounded-xl bg-[#4a1a7a]/5 px-6 py-5 text-center">
-                      <p className="font-serif text-4xl font-bold text-[#4a1a7a]">
-                        {formatPrijs(pricing.behandeling.kuur10Prijs)}
-                      </p>
-                      <p className="mt-1 text-sm text-[#1c1c1e]/55">
-                        {formatPrijs(pricing.behandeling.kuur10Prijs / 10)} per sessie
-                      </p>
-                    </div>
-                    <p className="text-sm leading-relaxed text-[#1c1c1e]/70">
-                      Voor het beste resultaat. Een kuur van 10 sessies geeft de meest zichtbare en blijvende verbetering. Resultaat is al merkbaar vanaf sessie 6.
-                    </p>
+                  <div className="flex-1 space-y-3">
+                    {pricing.kuurPakket.sessies.map((s) => (
+                      <div
+                        key={s.minuten}
+                        className="flex items-center justify-between rounded-xl bg-[#4a1a7a]/5 px-5 py-3"
+                      >
+                        <span className="text-sm font-medium text-[#1c1c1e]/70">
+                          {s.minuten} minuten
+                        </span>
+                        <span className="font-serif text-xl font-bold text-[#4a1a7a]">
+                          € {s.prijs},-
+                        </span>
+                      </div>
+                    ))}
                   </div>
+                  <p className="mt-4 text-xs leading-relaxed text-[#1c1c1e]/55">
+                    Resultaat is al merkbaar vanaf sessie 6. De 11e sessie is gratis.
+                  </p>
                   <Link
                     href="/contact"
-                    className="mt-8 block rounded-full bg-[#4a1a7a] px-6 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-[#5e2490]"
+                    className="mt-6 block rounded-full bg-[#4a1a7a] px-6 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-[#5e2490]"
                   >
                     Maak een afspraak
                   </Link>
@@ -99,22 +113,23 @@ export default function PrijzenPage() {
             </AnimatedSection>
           </div>
 
+          {/* Kennismaking */}
           <AnimatedSection delay={0.2}>
             <div className="mt-8 overflow-hidden rounded-3xl border border-[#d4a8b8]/40 bg-white shadow-sm">
               <div className="flex flex-col items-center gap-6 p-8 md:flex-row">
                 <div className="flex-1">
-                  <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-[#4a1a7a]">Start hier</p>
+                  <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-[#4a1a7a]">
+                    Start hier
+                  </p>
                   <h2 className="mb-2 font-serif text-2xl font-bold text-[#1a0a2e]">
                     {pricing.kennismaking.label}
                   </h2>
                   <p className="text-sm leading-relaxed text-[#1c1c1e]/70">
-                    Maak vrijblijvend kennis met de behandeling en ontvang persoonlijk advies. We bespreken jouw doelen en bepalen samen welk gebied en welke aanpak het beste bij jou past.
+                    Maak vrijblijvend kennis met de behandeling en ontvang persoonlijk advies. We bespreken jouw doelen en bepalen samen welke duur het beste bij jou past.
                   </p>
                 </div>
                 <div className="flex flex-col items-center gap-4 md:items-end">
-                  <p className="font-serif text-4xl font-bold text-[#4a1a7a]">
-                    {formatPrijs(pricing.kennismaking.prijs)}
-                  </p>
+                  <p className="font-serif text-4xl font-bold text-[#4a1a7a]">Gratis</p>
                   <Link
                     href="/contact"
                     className="whitespace-nowrap rounded-full border-2 border-[#4a1a7a] px-6 py-3 text-center text-sm font-semibold text-[#4a1a7a] transition-colors hover:bg-[#4a1a7a] hover:text-white"

@@ -11,11 +11,25 @@ export const contactInfo = {
 export const resendRecipientEmail = 'kader@mymiracle.nl';
 
 export const pricing = {
-  behandeling: {
-    losseSessionLabel: 'Losse sessie',
-    losseSessionPrijs: 80,
-    kuur10Label: 'Kuur 10 sessies',
-    kuur10Prijs: 800,
+  losseBehandeling: {
+    label: 'LPG Losse Behandeling',
+    sessies: [
+      { minuten: 10, prijs: 20 },
+      { minuten: 15, prijs: 30 },
+      { minuten: 20, prijs: 40 },
+      { minuten: 30, prijs: 60 },
+      { minuten: 40, prijs: 80 },
+    ],
+  },
+  kuurPakket: {
+    label: 'LPG Kuur Pakket',
+    omschrijving: '10 + 1 gratis sessie',
+    sessies: [
+      { minuten: 15, prijs: 300 },
+      { minuten: 20, prijs: 400 },
+      { minuten: 30, prijs: 600 },
+      { minuten: 40, prijs: 800 },
+    ],
   },
   kennismaking: {
     label: 'Kennismakingssessie',
