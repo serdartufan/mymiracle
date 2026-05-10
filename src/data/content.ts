@@ -60,7 +60,7 @@ export const testimonials = [
 export const images = {
   hero: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=1920&q=80',
   about: 'https://images.unsplash.com/photo-1559599101-f09722fb4948?w=800&q=80',
-  intro: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80',
+  intro: 'https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=800&q=80',
   behandelingenBody: 'https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=800&q=80',
   behandelingenFace: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&q=80',
   wellness: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=800&q=80',

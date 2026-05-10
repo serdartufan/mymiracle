@@ -214,7 +214,7 @@ export default function HomePage() {
             <div className="relative h-80 overflow-hidden rounded-3xl md:h-[480px]">
               <Image
                 src={images.intro}
-                alt="LPG Endermologie behandeling close-up"
+                alt="LPG Endermologie behandeling bij My Miracle Den Haag"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
