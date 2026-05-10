@@ -15,13 +15,13 @@ const resultaten = [
     label: 'Lichaam',
     items: ['Afname van cellulitis', 'Plaatselijke vetvermindering', 'Stevigere en soepelere huid', 'Verbeterde lymfedrainage'],
     img: images.behandelingenBody,
-    alt: 'LPG lichaamsbehandeling',
+    alt: 'LPG Endermologie lichaamsbehandeling bij My Miracle Den Haag',
   },
   {
     label: 'Gezicht',
     items: ['Stimuleert collageen en elastine', 'Liftend en verstevigend effect', 'Vermindering van rimpels', 'Egale huidtint en natuurlijke glow'],
     img: images.behandelingenFace,
-    alt: 'LPG gezichtsbehandeling',
+    alt: 'LPG Endermologie gezichtsbehandeling bij My Miracle Den Haag',
   },
 ];
 

@@ -38,7 +38,7 @@ export default function LichaamsBehandelingenPage() {
       <section className="relative bg-[#1a0a2e] pb-20 pt-36">
         <Image
           src={images.bodyTreatment}
-          alt="LPG lichaamsbehandeling"
+          alt="Professionele lichaamsbehandeling met LPG technologie"
           fill
           className="object-cover opacity-15"
           sizes="100vw"
@@ -88,7 +88,7 @@ export default function LichaamsBehandelingenPage() {
             <div className="relative h-80 overflow-hidden rounded-3xl md:h-[460px]">
               <Image
                 src={images.behandelingenBody}
-                alt="LPG lichaamsbehandeling voor cellulitis reductie huidverstevigend"
+                alt="LPG Endermologie lichaamsbehandeling bij My Miracle Den Haag"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"

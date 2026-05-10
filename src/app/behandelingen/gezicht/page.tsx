@@ -39,7 +39,7 @@ export default function GezichtsBehandelingenPage() {
       <section className="relative bg-[#1a0a2e] pb-20 pt-36">
         <Image
           src={images.faceTreatment}
-          alt="LPG gezichtsbehandeling"
+          alt="Gezichtsbehandeling met LPG Endermologie technologie"
           fill
           className="object-cover opacity-15"
           sizes="100vw"
@@ -91,7 +91,7 @@ export default function GezichtsBehandelingenPage() {
             <div className="relative h-80 overflow-hidden rounded-3xl md:h-[460px]">
               <Image
                 src={images.behandelingenFace}
-                alt="LPG gezichtsbehandeling anti-aging collageen stimulatie"
+                alt="LPG Endermologie gezichtsbehandeling bij My Miracle Den Haag"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
