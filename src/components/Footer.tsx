@@ -30,7 +30,7 @@ export default function Footer() {
         </div>
 
         {/* Middle row */}
-        <div className="grid grid-cols-1 gap-10 border-b border-[#d4a8b8]/30 py-10 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-10 border-b border-[#d4a8b8]/30 py-10 md:grid-cols-4">
           {/* Quick links */}
           <div>
             <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-[#d4a8b8]">
@@ -71,6 +71,25 @@ export default function Footer() {
               Openingstijden
             </h3>
             <p className="text-sm text-white/70">{contactInfo.openingHours}</p>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-[#d4a8b8]">
+              Juridisch
+            </h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/privacy-policy" className="text-sm text-white/70 transition-colors hover:text-white">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/algemene-voorwaarden" className="text-sm text-white/70 transition-colors hover:text-white">
+                  Algemene Voorwaarden
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
 
