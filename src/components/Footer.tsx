@@ -94,9 +94,14 @@ export default function Footer() {
         </div>
 
         {/* Bottom row */}
-        <p className="pt-8 text-center text-sm text-white/40">
-          © {new Date().getFullYear()} My Miracle. Alle rechten voorbehouden.
-        </p>
+        <div className="pt-8 text-center">
+          <p className="mb-2 text-xs text-white/40">
+            {contactInfo.address} | KVK: 94322309 | {contactInfo.email}
+          </p>
+          <p className="text-sm text-white/40">
+            © {new Date().getFullYear()} My Miracle. Alle rechten voorbehouden.
+          </p>
+        </div>
       </div>
     </footer>
   );

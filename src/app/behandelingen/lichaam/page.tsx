@@ -2,12 +2,31 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import AnimatedSection from '@/components/AnimatedSection';
+import Breadcrumb from '@/components/Breadcrumb';
 import { images } from '@/data/content';
 
 export const metadata: Metadata = {
-  title: 'Lichaamsbehandelingen',
+  title: 'LPG Lichaamsbehandeling | Cellulitis & Huidverstrakking Den Haag',
   description:
-    'LPG lichaamsbehandelingen bij My Miracle: cellulitisreductie, vetvermindering en huidverstevigend. Wetenschappelijk bewezen resultaat vanaf sessie 6.',
+    'LPG lichaamsbehandeling in Den Haag voor cellulitis, slappe huid en bindweefsel. Niet-invasief en wetenschappelijk bewezen. Maak een afspraak bij My Miracle.',
+  alternates: {
+    canonical: 'https://mymiracle.nl/behandelingen/lichaam',
+  },
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'LPG Lichaamsbehandeling',
+  description:
+    'Wetenschappelijk bewezen LPG Endermologie lichaamsbehandeling voor cellulitisreductie, vetvermindering en huidverstevigend in Den Haag.',
+  provider: {
+    '@type': 'HealthAndBeautyBusiness',
+    name: 'My Miracle',
+    url: 'https://mymiracle.nl',
+  },
+  areaServed: 'Den Haag',
+  serviceType: 'LPG Endermologie Lichaamsbehandeling',
 };
 
 const benefits = [
@@ -34,16 +53,28 @@ const whoForItems = [
 export default function LichaamsBehandelingenPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+
       {/* Hero */}
       <section className="relative bg-[#1a0a2e] pb-20 pt-36">
         <Image
           src={images.bodyTreatment}
-          alt="Professionele lichaamsbehandeling met LPG technologie"
+          alt="Professionele lichaamsbehandeling met LPG technologie bij My Miracle Den Haag"
           fill
           className="object-cover opacity-15"
+          priority
           sizes="100vw"
         />
         <div className="relative z-10 mx-auto max-w-7xl px-4 md:px-8">
+          <Breadcrumb
+            items={[
+              { label: 'Behandelingen', href: '/behandelingen' },
+              { label: 'Lichaamsbehandeling', href: '/behandelingen/lichaam' },
+            ]}
+          />
           <AnimatedSection>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-[#d4a8b8]">
               LPG Endermologie

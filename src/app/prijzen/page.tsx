@@ -1,19 +1,59 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import AnimatedSection from '@/components/AnimatedSection';
+import Breadcrumb from '@/components/Breadcrumb';
 import { pricing } from '@/data/content';
 
 export const metadata: Metadata = {
-  title: 'Prijzen',
+  title: 'Prijzen LPG Behandelingen Den Haag',
   description:
-    'Bekijk de prijzen voor LPG Endermologie behandelingen bij My Miracle. Transparant en eerlijk geprijsd.',
+    'Bekijk de prijzen voor LPG lichaams- en gezichtsbehandelingen bij My Miracle in Den Haag. Transparante tarieven, geen verborgen kosten.',
+  alternates: {
+    canonical: 'https://mymiracle.nl/prijzen',
+  },
+};
+
+const priceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'LPG Behandeling Prijzen My Miracle Den Haag',
+  itemListElement: [
+    ...pricing.losseBehandeling.sessies.map((s, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'Offer',
+        name: `LPG Losse Behandeling ${s.minuten} minuten`,
+        price: s.prijs,
+        priceCurrency: 'EUR',
+        seller: { '@type': 'Organization', name: 'My Miracle' },
+      },
+    })),
+    ...pricing.kuurPakket.sessies.map((s, i) => ({
+      '@type': 'ListItem',
+      position: pricing.losseBehandeling.sessies.length + i + 1,
+      item: {
+        '@type': 'Offer',
+        name: `LPG Kuur Pakket ${s.minuten} minuten (10+1 gratis)`,
+        price: s.prijs,
+        priceCurrency: 'EUR',
+        seller: { '@type': 'Organization', name: 'My Miracle' },
+      },
+    })),
+  ],
 };
 
 export default function PrijzenPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(priceSchema) }}
+      />
+
       <section className="bg-[#1a0a2e] pb-20 pt-36">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
+          <Breadcrumb items={[{ label: 'Prijzen', href: '/prijzen' }]} />
           <AnimatedSection>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-[#d4a8b8]">
               Transparante tarieven

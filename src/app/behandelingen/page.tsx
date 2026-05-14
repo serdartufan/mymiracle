@@ -2,12 +2,16 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import AnimatedSection from '@/components/AnimatedSection';
+import Breadcrumb from '@/components/Breadcrumb';
 import { images } from '@/data/content';
 
 export const metadata: Metadata = {
-  title: 'Behandeling',
+  title: 'LPG Behandelingen Den Haag',
   description:
-    'LPG Endermologie bij My Miracle: één gecertificeerde behandeling voor lichaam en gezicht, persoonlijk afgestemd op jouw doelen tijdens de intake.',
+    'Ontdek alle LPG Endermologie behandelingen bij My Miracle Den Haag. Lichaams- en gezichtsbehandelingen op maat. Wetenschappelijk bewezen resultaat.',
+  alternates: {
+    canonical: 'https://mymiracle.nl/behandelingen',
+  },
 };
 
 const resultaten = [
@@ -30,6 +34,7 @@ export default function BehandelingenPage() {
     <>
       <section className="bg-[#1a0a2e] pb-20 pt-36">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
+          <Breadcrumb items={[{ label: 'Behandelingen', href: '/behandelingen' }]} />
           <AnimatedSection>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-[#d4a8b8]">
               LPG Endermologie

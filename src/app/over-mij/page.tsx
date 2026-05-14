@@ -2,12 +2,29 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import AnimatedSection from '@/components/AnimatedSection';
+import Breadcrumb from '@/components/Breadcrumb';
 import { ownerName, images } from '@/data/content';
 
 export const metadata: Metadata = {
-  title: 'Over Mij',
+  title: 'Over Mij | Gecertificeerd LPG Therapeute Den Haag',
   description:
-    'Leer meer over de gecertificeerde LPG Endermologie therapeut achter My Miracle. Persoonlijke aanpak, jarenlange ervaring en echte passie voor huidverbetering.',
+    'Maak kennis met Kader, gecertificeerd LPG therapeute en eigenaar van My Miracle in Den Haag. Officieel LPG partner.',
+  alternates: {
+    canonical: 'https://mymiracle.nl/over-mij',
+  },
+};
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: ownerName,
+  jobTitle: 'Gecertificeerd LPG Therapeute',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'My Miracle',
+    url: 'https://mymiracle.nl',
+  },
+  url: 'https://mymiracle.nl/over-mij',
 };
 
 const certifications = [
@@ -18,9 +35,15 @@ const certifications = [
 export default function OverMijPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
+
       {/* Hero */}
       <section className="bg-[#1a0a2e] pb-20 pt-36">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
+          <Breadcrumb items={[{ label: 'Over Mij', href: '/over-mij' }]} />
           <AnimatedSection>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-[#d4a8b8]">
               Mijn verhaal
@@ -38,7 +61,7 @@ export default function OverMijPage() {
             <div className="relative h-[500px] overflow-hidden rounded-3xl">
               <Image
                 src={images.about}
-                alt={`Portretfoto van ${ownerName}, gecertificeerd LPG Endermologie therapeut`}
+                alt={`Portretfoto van ${ownerName}, gecertificeerd LPG Endermologie therapeut Den Haag`}
                 fill
                 className="object-cover object-top"
                 sizes="(max-width: 768px) 100vw, 50vw"

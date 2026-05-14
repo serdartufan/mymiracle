@@ -11,6 +11,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/lpg-endermologie', priority: 0.85, changeFrequency: 'monthly' as const },
     { path: '/prijzen', priority: 0.8, changeFrequency: 'weekly' as const },
     { path: '/contact', priority: 0.9, changeFrequency: 'monthly' as const },
+    { path: '/privacy-policy', priority: 0.3, changeFrequency: 'yearly' as const },
+    { path: '/algemene-voorwaarden', priority: 0.3, changeFrequency: 'yearly' as const },
   ];
 
   return pages.map(({ path, priority, changeFrequency }) => ({

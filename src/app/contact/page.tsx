@@ -1,12 +1,16 @@
 import type { Metadata } from 'next';
 import AnimatedSection from '@/components/AnimatedSection';
+import Breadcrumb from '@/components/Breadcrumb';
 import ContactForm from '@/components/ContactForm';
 import { contactInfo } from '@/data/content';
 
 export const metadata: Metadata = {
-  title: 'Contact & Afspraak',
+  title: 'Afspraak Maken | My Miracle LPG Centrum Den Haag',
   description:
-    'Neem contact op met My Miracle of maak direct een afspraak voor een LPG Endermologie behandeling. We helpen je graag verder.',
+    'Maak een afspraak bij My Miracle in Den Haag. LPG Endermologie behandelingen voor lichaam en gezicht. Bereikbaar via email of contactformulier.',
+  alternates: {
+    canonical: 'https://mymiracle.nl/contact',
+  },
 };
 
 export default function ContactPage() {
@@ -15,6 +19,7 @@ export default function ContactPage() {
       {/* Hero */}
       <section className="bg-[#1a0a2e] pb-20 pt-36">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
+          <Breadcrumb items={[{ label: 'Contact', href: '/contact' }]} />
           <AnimatedSection>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-[#d4a8b8]">
               We helpen je graag
@@ -82,7 +87,7 @@ export default function ContactPage() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Locatie My Miracle, Knobbelzwaansingel 109, Den Haag"
+                title="Locatie My Miracle, Bezuidenhoutseweg 161, Den Haag"
               />
             </div>
           </AnimatedSection>

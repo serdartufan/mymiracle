@@ -1,12 +1,71 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import AnimatedSection from '@/components/AnimatedSection';
+import Breadcrumb from '@/components/Breadcrumb';
 import FaqAccordion from '@/components/FaqAccordion';
 
 export const metadata: Metadata = {
-  title: 'Wat is LPG Endermologie?',
+  title: 'Wat is LPG Endermologie? | My Miracle Den Haag',
   description:
-    'Alles over LPG Endermologie: hoe het werkt, de wetenschap erachter, verwachte resultaten en veiligheid. De niet-invasieve standaard in huidbehandeling.',
+    'Alles over LPG Endermologie: hoe werkt het, wat zijn de resultaten en voor wie is het geschikt? My Miracle Den Haag legt het uit.',
+  alternates: {
+    canonical: 'https://mymiracle.nl/lpg-endermologie',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Wat is LPG Endermologie?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'LPG Endermologie is een niet-invasieve techniek ontwikkeld door het Franse bedrijf LPG Systems. Via mechanische stimulatie met de Cellu M6 machine (rollers en vacuüm) worden huidcellen geactiveerd zonder ingrepen of bijwerkingen. De technologie is wereldwijd de standaard in niet-chirurgische lichaams- en gezichtsbehandeling en werd als eerste van zijn soort erkend door de FDA voor cellulitisreductie.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is LPG Endermologie pijnlijk?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Nee. De behandeling voelt aan als een diepe, warme massage. Sommige gebieden kunnen gevoeliger zijn, maar pijn is niet normaal. Geef dit altijd aan zodat de therapeut de intensiteit kan aanpassen.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Hoeveel behandelingen heb ik nodig?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Voor een optimaal resultaat adviseren we gemiddeld 6 tot 10 sessies voor de eerste zichtbare resultaten. Een volledige kuur bestaat uit 10 tot 15 sessies, bij voorkeur 1 tot 2 keer per week. Daarna is onderhoud van 1 sessie per maand aanbevolen.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Voor wie is LPG Endermologie geschikt?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'LPG Endermologie is geschikt voor vrouwen en mannen met cellulitis, slappe huid, rimpels of die huidverjonging wensen. De techniek wordt aangepast aan het huidtype en de doelstellingen van elke cliënt.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Wat kost een LPG behandeling?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'De prijzen voor LPG behandelingen bij My Miracle zijn afhankelijk van de sessieduur. Bekijk de volledige tarieven op onze prijzenpagina: https://mymiracle.nl/prijzen.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Kan ik direct na de behandeling werken?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ja. Er is geen herstelperiode. Je kunt direct na de behandeling je dagelijkse activiteiten hervatten. Drink wel voldoende water om de lymfedrainage te ondersteunen.',
+      },
+    },
+  ],
 };
 
 const timeline = [
@@ -19,9 +78,15 @@ const timeline = [
 export default function LpgEndermologiePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       {/* Hero */}
       <section className="bg-[#1a0a2e] pb-20 pt-36">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
+          <Breadcrumb items={[{ label: 'LPG Endermologie', href: '/lpg-endermologie' }]} />
           <AnimatedSection>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-[#d4a8b8]">
               De wetenschap achter de behandeling

@@ -5,23 +5,42 @@ import AnimatedSection from '@/components/AnimatedSection';
 import { testimonials, images } from '@/data/content';
 
 export const metadata: Metadata = {
-  title: 'My Miracle | Gecertificeerd LPG Endermologie Centrum',
+  title: 'My Miracle | Gecertificeerd LPG Endermologie Centrum Den Haag',
   description:
-    'Gecertificeerde LPG Endermologie behandelingen voor lichaam en gezicht bij My Miracle. Wetenschappelijk bewezen, 100% niet-invasief. Maak een afspraak.',
+    'Officieel gecertificeerd LPG Endermologie centrum in Den Haag. Behandelingen voor cellulitis, huidverstrakking en gezichtsverjonging. Alleen op afspraak.',
+  alternates: {
+    canonical: 'https://mymiracle.nl',
+  },
 };
 
 const localBusinessSchema = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
+  '@type': 'HealthAndBeautyBusiness',
   name: 'My Miracle',
-  description: 'Gecertificeerd LPG Endermologie centrum voor lichaam en gezicht.',
-  url: 'https://mymiracle.be',
-  image: 'https://mymiracle.be/MyMiracle_Full_Color.svg',
+  description: 'Gecertificeerd LPG Endermologie centrum voor lichaam en gezicht in Den Haag.',
+  url: 'https://mymiracle.nl',
+  email: 'kader@mymiracle.nl',
+  image: 'https://mymiracle.nl/MyMiracle_Full_Color.svg',
   priceRange: '€€',
   address: {
     '@type': 'PostalAddress',
-    addressCountry: 'BE',
+    streetAddress: 'Bezuidenhoutseweg 161',
+    addressLocality: 'Den Haag',
+    postalCode: '2594 AG',
+    addressCountry: 'NL',
   },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 52.0705,
+    longitude: 4.3007,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '18:00',
+  },
+  areaServed: 'Den Haag',
 };
 
 const trustItems = [
@@ -68,13 +87,13 @@ const behandelingResultaten = [
     label: 'Lichaam',
     items: ['Afname van cellulitis', 'Plaatselijke vetvermindering', 'Stevigere huid'],
     img: images.behandelingenBody,
-    alt: 'LPG lichaamsbehandeling',
+    alt: 'LPG lichaamsbehandeling bij My Miracle Den Haag',
   },
   {
     label: 'Gezicht',
     items: ['Stimuleert collageen', 'Liftend effect', 'Stralende huidtint'],
     img: images.behandelingenFace,
-    alt: 'LPG gezichtsbehandeling',
+    alt: 'LPG gezichtsbehandeling bij My Miracle Den Haag',
   },
 ];
 
@@ -121,7 +140,7 @@ export default function HomePage() {
       <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#1a0a2e]">
         <Image
           src={images.hero}
-          alt="Luxe wellnessbehandeling sfeervolle ruimte"
+          alt="Luxe wellnessbehandeling sfeervolle ruimte My Miracle Den Haag"
           fill
           className="object-cover opacity-25"
           priority
@@ -131,7 +150,7 @@ export default function HomePage() {
         <div className="relative z-10 mx-auto max-w-4xl px-4 py-32 text-center md:px-8">
           <AnimatedSection>
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-[#d4a8b8]">
-              Gecertificeerd LPG Endermologie centrum
+              Gecertificeerd LPG Endermologie centrum Den Haag
             </p>
             <h1 className="mb-6 font-serif text-5xl font-bold leading-tight text-white md:text-7xl">
               Voel je beter.<br />Zie het verschil.
@@ -306,7 +325,7 @@ export default function HomePage() {
             <div className="relative h-80 overflow-hidden rounded-3xl md:h-[500px]">
               <Image
                 src={images.whyUs}
-                alt="Professionele behandelruimte My Miracle"
+                alt="Professionele behandelruimte My Miracle Den Haag"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"

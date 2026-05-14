@@ -2,12 +2,31 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import AnimatedSection from '@/components/AnimatedSection';
+import Breadcrumb from '@/components/Breadcrumb';
 import { images } from '@/data/content';
 
 export const metadata: Metadata = {
-  title: 'Gezichtsbehandelingen',
+  title: 'LPG Gezichtsbehandeling | Anti-aging & Huidverjonging Den Haag',
   description:
-    'LPG gezichtsbehandelingen bij My Miracle: anti-aging, liftend effect en collagenenstimulatie. Natuurlijk resultaat zonder injecties.',
+    'Professionele LPG gezichtsbehandeling in Den Haag. Vermindert rimpels, verbetert huidtextuur en stimuleert collageen. Officieel LPG centrum My Miracle.',
+  alternates: {
+    canonical: 'https://mymiracle.nl/behandelingen/gezicht',
+  },
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'LPG Gezichtsbehandeling',
+  description:
+    'Anti-aging LPG Endermologie gezichtsbehandeling in Den Haag. Stimuleert collageen en elastine voor een natuurlijk liftend effect zonder injecties.',
+  provider: {
+    '@type': 'HealthAndBeautyBusiness',
+    name: 'My Miracle',
+    url: 'https://mymiracle.nl',
+  },
+  areaServed: 'Den Haag',
+  serviceType: 'LPG Endermologie Gezichtsbehandeling',
 };
 
 const benefits = [
@@ -35,16 +54,28 @@ const whoForItems = [
 export default function GezichtsBehandelingenPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+
       {/* Hero */}
       <section className="relative bg-[#1a0a2e] pb-20 pt-36">
         <Image
           src={images.faceTreatment}
-          alt="Gezichtsbehandeling met LPG Endermologie technologie"
+          alt="Gezichtsbehandeling met LPG Endermologie technologie bij My Miracle Den Haag"
           fill
           className="object-cover opacity-15"
+          priority
           sizes="100vw"
         />
         <div className="relative z-10 mx-auto max-w-7xl px-4 md:px-8">
+          <Breadcrumb
+            items={[
+              { label: 'Behandelingen', href: '/behandelingen' },
+              { label: 'Gezichtsbehandeling', href: '/behandelingen/gezicht' },
+            ]}
+          />
           <AnimatedSection>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-[#d4a8b8]">
               LPG Endermologie
