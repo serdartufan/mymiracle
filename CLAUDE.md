@@ -29,6 +29,20 @@
 - **Rich results test** — 4 valid items (Local businesses + Organization)
 - **Google Business Profile** aangemaakt voor My Miracle Den Haag
 
+### Kennisbank (2026-05-27)
+
+- **Kennisbank sectie** gebouwd met 5 artikelen op `/kennisbank`
+  - `lpg-endermologie-werkt-het`
+  - `cellulitis-behandelen-methodes`
+  - `lpg-massage-den-haag-eerste-behandeling`
+  - `bindweefsel-massage-vs-lpg`
+  - `buik-strakker-maken-zonder-operatie`
+- **Artikel content** volledig uitgeschreven in `src/app/kennisbank/[slug]/page.tsx` via `artikelData` lookup (Record keyed op slug)
+- **Pagina-opbouw per artikel**: snel-antwoord sectie, artikel body met H2-structuur en Q&A blokken, FAQ sectie, gerelateerde artikelen grid (4 kolommen desktop), CTA
+- **JSON-LD schemas per artikel**: `Article` (auteur: Kader Tufan), `FAQPage` (3 vragen), `BreadcrumbList` via `Breadcrumb` component
+- **Kennisbank** toegevoegd aan navbar na "Behandeling"
+- **Sitemap** uitgebreid met `/kennisbank` en alle 5 artikel-slugs (gegenereerd vanuit `kennisbank` array in `content.ts`)
+
 ### Security (2026-05-27)
 
 - **Next.js 16.2.4 → 16.2.6** — SSRF (CVSS 8.6), middleware bypass (×4), DoS, XSS CVE's gedicht
@@ -51,3 +65,4 @@
 - Teksten uitbreiden op behandelingspagina's (min. 800 woorden)
 - Echte foto's toevoegen (placeholder Unsplash-foto's vervangen)
 - Reviews verzamelen via Google Business Profile
+- Externe bronlinks toevoegen aan kennisbank artikelen voor E-E-A-T signalering
