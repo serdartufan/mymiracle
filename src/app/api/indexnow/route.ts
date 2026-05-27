@@ -1,13 +1,18 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { pingIndexNow } from '@/lib/indexnow';
 
-export async function POST() {
+export async function POST(request: NextRequest) {
+  const secret = request.headers.get('x-admin-secret');
+  if (!secret || secret !== process.env.ADMIN_SECRET) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
   const result = await pingIndexNow();
 
   if (!result.ok) {
     return NextResponse.json(
       { success: false, status: result.status, error: result.error },
-      { status: 502 }
+      { status: 502 },
     );
   }
 

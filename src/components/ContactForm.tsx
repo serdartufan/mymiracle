@@ -14,6 +14,7 @@ export default function ContactForm() {
     email: '',
     geboortedatum: '',
     toelichting: '',
+    website: '',
   });
 
   const handleChange = (
@@ -61,6 +62,18 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+      {/* Honeypot — verborgen voor mensen, zichtbaar voor bots */}
+      <input
+        type="text"
+        name="website"
+        value={form.website}
+        onChange={handleChange}
+        tabIndex={-1}
+        autoComplete="off"
+        style={{ display: 'none' }}
+        aria-hidden="true"
+      />
+
       {/* Geslacht */}
       <div>
         <p className={labelClass}>Geslacht{required}</p>
