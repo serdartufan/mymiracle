@@ -8,6 +8,7 @@ const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'Over Mij', href: '/over-mij' },
   { label: 'Behandeling', href: '/behandelingen' },
+  { label: 'Kennisbank', href: '/kennisbank' },
   { label: 'LPG Endermologie', href: '/lpg-endermologie' },
   { label: 'Prijzen', href: '/prijzen' },
   { label: 'Contact', href: '/contact' },

@@ -56,6 +56,54 @@ export const testimonials = [
   },
 ];
 
+export const kennisbank = [
+  {
+    id: 'lpg-endermologie-werkt-het',
+    title: 'LPG endermologie: werkt het echt?',
+    slug: 'lpg-endermologie-werkt-het',
+    category: 'LPG & Endermologie',
+    excerpt: 'Er zijn veel verhalen over LPG endermologie. Wij zetten de feiten op een rij en leggen eerlijk uit wanneer het wél en niet werkt.',
+    readTime: '6 min',
+    publishDate: '2026-05-27',
+  },
+  {
+    id: 'cellulitis-behandelen-methodes',
+    title: 'Cellulitis behandelen: welke methodes werken aantoonbaar?',
+    slug: 'cellulitis-behandelen-methodes',
+    category: 'Cellulitis',
+    excerpt: 'Cellulitis is hardnekkig, maar niet onbehandelbaar. Ontdek welke behandelingen wetenschappelijk onderbouwd zijn.',
+    readTime: '7 min',
+    publishDate: '2026-05-27',
+  },
+  {
+    id: 'lpg-massage-den-haag-eerste-behandeling',
+    title: 'LPG massage Den Haag: wat kun je verwachten bij je eerste behandeling?',
+    slug: 'lpg-massage-den-haag-eerste-behandeling',
+    category: 'LPG & Endermologie',
+    excerpt: 'Nog nooit een LPG massage gehad? Wij leggen stap voor stap uit wat er gebeurt en wat je van je eerste sessie mag verwachten.',
+    readTime: '5 min',
+    publishDate: '2026-05-27',
+  },
+  {
+    id: 'bindweefsel-massage-vs-lpg',
+    title: 'Bindweefsel massage vs LPG: wat is het verschil?',
+    slug: 'bindweefsel-massage-vs-lpg',
+    category: 'Behandelingen',
+    excerpt: 'Bindweefsel massage en LPG endermologie lijken op elkaar, maar zijn fundamenteel anders. Wij leggen het verschil uit.',
+    readTime: '5 min',
+    publishDate: '2026-05-27',
+  },
+  {
+    id: 'buik-strakker-maken-zonder-operatie',
+    title: 'Buik strakker maken zonder operatie: de opties op een rij',
+    slug: 'buik-strakker-maken-zonder-operatie',
+    category: 'Lichaam',
+    excerpt: 'Een strakkere buik zonder ingreep? Er zijn meerdere niet-chirurgische opties. Wij vergelijken ze eerlijk.',
+    readTime: '6 min',
+    publishDate: '2026-05-27',
+  },
+];
+
 // TODO: Vervang Unsplash URLs door eigen professionele foto's voor go-live
 export const images = {
   hero: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=1920&q=80',
