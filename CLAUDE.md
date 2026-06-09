@@ -55,7 +55,7 @@
 - **Honeypot veld** `website` in `ContactForm.tsx` — verborgen voor gebruikers, bots die het invullen krijgen nep-200; gelogd als `[honeypot] Bot geblokkeerd, IP: ...`
 - **`/api/indexnow` beveiligd** — vereist `x-admin-secret` header die overeenkomt met `ADMIN_SECRET` env var; geeft `401` zonder geldige secret
 
-### Environment variables (Vercel)
+### Environment variables (op server: /var/www/mymiracle/.env — nog te migreren van Vercel)
 
 - `RESEND_API_KEY` — Resend API sleutel voor contactformulier
 - `ADMIN_SECRET` — geheime header voor `/api/indexnow` endpoint

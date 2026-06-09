@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { Resend } from 'resend';
-import { resendRecipientEmail } from '@/data/content';
 import { checkRateLimit } from '@/lib/rate-limit';
+
+const RECIPIENT = 'kader@mymiracle.nl';
+const SENDER = { name: 'My Miracle', email: 'kader@mymiracle.nl' };
 
 const GESLACHT_WHITELIST = ['Vrouw', 'Man'];
 
@@ -69,53 +70,67 @@ export async function POST(request: NextRequest) {
       toelichting: toelichting ? escapeHtml(toelichting) : null,
     };
 
-    const resend = new Resend(process.env.RESEND_API_KEY);
-    await resend.emails.send({
-      from: 'My Miracle <noreply@mymiracle.nl>',
-      to: resendRecipientEmail,
-      replyTo: safe.email,
-      subject: `Nieuwe aanvraag via mymiracle.nl: ${safe.voornaam} ${safe.achternaam}`,
-      html: `
-        <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; color: #1c1c1e;">
-          <div style="background: #1a0a2e; padding: 32px; border-radius: 12px 12px 0 0;">
-            <h1 style="color: white; margin: 0; font-size: 24px;">Nieuwe aanvraag via mymiracle.nl</h1>
-          </div>
-          <div style="background: #faf7f4; padding: 32px; border-radius: 0 0 12px 12px; border: 1px solid #e5e7eb;">
-            <table style="width: 100%; border-collapse: collapse;">
-              <tr>
-                <td style="padding: 8px 0; color: #6b7280; width: 160px; font-size: 14px;">Geslacht</td>
-                <td style="padding: 8px 0; font-weight: 600; font-size: 14px;">${safe.geslacht}</td>
-              </tr>
-              <tr>
-                <td style="padding: 8px 0; color: #6b7280; font-size: 14px;">Voornaam</td>
-                <td style="padding: 8px 0; font-weight: 600; font-size: 14px;">${safe.voornaam}</td>
-              </tr>
-              <tr>
-                <td style="padding: 8px 0; color: #6b7280; font-size: 14px;">Achternaam</td>
-                <td style="padding: 8px 0; font-weight: 600; font-size: 14px;">${safe.achternaam}</td>
-              </tr>
-              <tr>
-                <td style="padding: 8px 0; color: #6b7280; font-size: 14px;">Telefoonnummer</td>
-                <td style="padding: 8px 0; font-size: 14px;">${safe.telefoonnummer}</td>
-              </tr>
-              <tr>
-                <td style="padding: 8px 0; color: #6b7280; font-size: 14px;">E-mailadres</td>
-                <td style="padding: 8px 0; font-size: 14px;"><a href="mailto:${safe.email}">${safe.email}</a></td>
-              </tr>
-              <tr>
-                <td style="padding: 8px 0; color: #6b7280; font-size: 14px;">Geboortedatum</td>
-                <td style="padding: 8px 0; font-size: 14px;">${safe.geboortedatum}</td>
-              </tr>
-            </table>
-            ${safe.toelichting ? `
-            <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 20px 0;" />
-            <p style="font-size: 14px; color: #6b7280; margin: 0 0 8px;">Toelichting:</p>
-            <p style="font-size: 14px; line-height: 1.6; white-space: pre-wrap; margin: 0;">${safe.toelichting}</p>
-            ` : ''}
-          </div>
+    const htmlContent = `
+      <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; color: #1c1c1e;">
+        <div style="background: #1a0a2e; padding: 32px; border-radius: 12px 12px 0 0;">
+          <h1 style="color: white; margin: 0; font-size: 24px;">Nieuwe aanvraag via mymiracle.nl</h1>
         </div>
-      `,
+        <div style="background: #faf7f4; padding: 32px; border-radius: 0 0 12px 12px; border: 1px solid #e5e7eb;">
+          <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+              <td style="padding: 8px 0; color: #6b7280; width: 160px; font-size: 14px;">Geslacht</td>
+              <td style="padding: 8px 0; font-weight: 600; font-size: 14px;">${safe.geslacht}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; color: #6b7280; font-size: 14px;">Voornaam</td>
+              <td style="padding: 8px 0; font-weight: 600; font-size: 14px;">${safe.voornaam}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; color: #6b7280; font-size: 14px;">Achternaam</td>
+              <td style="padding: 8px 0; font-weight: 600; font-size: 14px;">${safe.achternaam}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; color: #6b7280; font-size: 14px;">Telefoonnummer</td>
+              <td style="padding: 8px 0; font-size: 14px;">${safe.telefoonnummer}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; color: #6b7280; font-size: 14px;">E-mailadres</td>
+              <td style="padding: 8px 0; font-size: 14px;"><a href="mailto:${safe.email}">${safe.email}</a></td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; color: #6b7280; font-size: 14px;">Geboortedatum</td>
+              <td style="padding: 8px 0; font-size: 14px;">${safe.geboortedatum}</td>
+            </tr>
+          </table>
+          ${safe.toelichting ? `
+          <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 20px 0;" />
+          <p style="font-size: 14px; color: #6b7280; margin: 0 0 8px;">Toelichting:</p>
+          <p style="font-size: 14px; line-height: 1.6; white-space: pre-wrap; margin: 0;">${safe.toelichting}</p>
+          ` : ''}
+        </div>
+      </div>
+    `;
+
+    const brevoRes = await fetch('https://api.brevo.com/v3/smtp/email', {
+      method: 'POST',
+      headers: {
+        'api-key': process.env.BREVO_API_KEY ?? '',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        sender: SENDER,
+        to: [{ email: RECIPIENT }],
+        replyTo: { email: safe.email, name: `${safe.voornaam} ${safe.achternaam}` },
+        subject: `Nieuwe aanvraag via mymiracle.nl: ${safe.voornaam} ${safe.achternaam}`,
+        htmlContent,
+      }),
     });
+
+    if (!brevoRes.ok) {
+      const detail = await brevoRes.text();
+      console.error('Brevo fout:', brevoRes.status, detail);
+      throw new Error('Brevo API fout');
+    }
 
     return NextResponse.json({ success: true });
   } catch (error) {
