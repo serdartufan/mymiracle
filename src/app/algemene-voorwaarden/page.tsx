@@ -27,7 +27,7 @@ export default function AlgemeneVoorwaardenPage() {
           <AnimatedSection>
             <div className="prose prose-lg max-w-none text-[#1c1c1e]/80">
 
-              <p className="text-sm text-[#1c1c1e]/50">Versie mei 2025 — My Miracle, Den Haag</p>
+              <p className="text-sm text-[#1c1c1e]/50">Versie mei 2025 · My Miracle, Den Haag</p>
 
               <h2 className="mt-10 font-serif text-2xl font-bold text-[#1a0a2e]">1. Toepasselijkheid</h2>
               <p>

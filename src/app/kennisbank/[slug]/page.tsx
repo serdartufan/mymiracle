@@ -17,7 +17,7 @@ const A = 'text-[#4a1a7a] underline underline-offset-2 hover:text-[#5e2490] tran
 
 function QA({ vraag, antwoord }: { vraag: string; antwoord: string }) {
   return (
-    <div className="my-8 rounded-2xl border-l-4 border-[#4a1a7a] bg-[#faf7f4] px-6 py-5">
+    <div className="my-8 rounded-2xl border border-[#1c1c1e]/10 bg-[#faf7f4] px-6 py-5">
       <p className="mb-2 font-semibold text-[#1a0a2e]">{vraag}</p>
       <p className="text-sm leading-relaxed text-[#1c1c1e]/70">{antwoord}</p>
     </div>
@@ -852,7 +852,7 @@ export default async function ArtikelPage({ params }: Props) {
         <section className="bg-[#faf7f4] py-10">
           <div className="mx-auto max-w-3xl px-4 md:px-8">
             <AnimatedSection>
-              <div className="rounded-2xl border-l-4 border-[#4a1a7a] bg-white px-7 py-6 shadow-sm">
+              <div className="rounded-2xl border border-[#4a1a7a]/15 bg-white px-7 py-6 shadow-sm">
                 <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[#4a1a7a]">
                   Kort antwoord
                 </p>

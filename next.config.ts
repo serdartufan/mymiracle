@@ -23,6 +23,7 @@ const nextConfig: NextConfig = {
               "img-src 'self' data: https://images.unsplash.com",
               "font-src 'self'",
               "connect-src 'self'",
+              "frame-src https://www.google.com",
               "frame-ancestors 'none'",
             ].join('; '),
           },

@@ -43,7 +43,10 @@ export default function ContactPage() {
             <ul className="mb-10 space-y-5">
               <li className="flex items-start gap-4">
                 <span className="mt-0.5 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#4a1a7a]/10 text-[#4a1a7a]">
-                  📍
+                  <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
                 </span>
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-widest text-[#4a1a7a]">Adres</p>
@@ -52,7 +55,10 @@ export default function ContactPage() {
               </li>
               <li className="flex items-start gap-4">
                 <span className="mt-0.5 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#4a1a7a]/10 text-[#4a1a7a]">
-                  ✉️
+                  <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                    <path d="m22 7-10 6L2 7" />
+                  </svg>
                 </span>
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-widest text-[#4a1a7a]">E-mail</p>
@@ -66,7 +72,10 @@ export default function ContactPage() {
               </li>
               <li className="flex items-start gap-4">
                 <span className="mt-0.5 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#4a1a7a]/10 text-[#4a1a7a]">
-                  🕐
+                  <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 7v5l3 2" />
+                  </svg>
                 </span>
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-widest text-[#4a1a7a]">

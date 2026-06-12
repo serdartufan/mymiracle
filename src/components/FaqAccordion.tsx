@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 
 const faqs = [
   {
@@ -32,6 +32,7 @@ const faqs = [
 
 export default function FaqAccordion() {
   const [open, setOpen] = useState<number | null>(null);
+  const reduceMotion = useReducedMotion();
 
   return (
     <dl className="space-y-3">
@@ -49,7 +50,7 @@ export default function FaqAccordion() {
               <span>{faq.q}</span>
               <motion.span
                 animate={{ rotate: open === i ? 45 : 0 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: reduceMotion ? 0 : 0.2 }}
                 className="ml-4 flex-shrink-0 text-[#4a1a7a]"
               >
                 <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -65,7 +66,7 @@ export default function FaqAccordion() {
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: 'auto', opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.3, ease: 'easeInOut' }}
+                transition={{ duration: reduceMotion ? 0 : 0.3, ease: 'easeInOut' }}
                 className="overflow-hidden"
               >
                 <p className="px-6 pb-5 text-sm leading-relaxed text-[#1c1c1e]/70">{faq.a}</p>

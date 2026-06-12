@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 export async function GET() {
-  const content = `# My Miracle — Volledig Overzicht
+  const content = `# My Miracle: Volledig Overzicht
 > Gecertificeerd LPG Endermologie centrum in Den Haag
 
 ## Over My Miracle
@@ -14,7 +14,7 @@ My Miracle werkt uitsluitend op afspraak en biedt een persoonlijke, rustige beha
 
 Kader Tufan is gecertificeerd LPG Endermologie therapeute en eigenaar van My Miracle. Zij specialiseerde zich volledig in LPG Endermologie na jarenlange ervaring in de schoonheids- en wellnesssector. Haar aanpak is persoonlijk: iedere behandeling start met een intakegesprek om doelen en aanpak samen te bepalen.
 
-## LPG Endermologie — Technologie
+## LPG Endermologie: Technologie
 
 LPG Endermologie is een niet-invasieve techniek ontwikkeld door het Franse bedrijf LPG Systems. Via mechanische stimulatie met rollers en vacuüm worden huidcellen geactiveerd zonder ingrepen of bijwerkingen. De Cellu M6 machine is de gouden standaard:
 
@@ -84,7 +84,7 @@ Anti-aging behandeling voor:
 - 40 minuten: € 800,-
 
 ### Kennismakingssessie
-- Gratis — vrijblijvende intake om doelen en behandelplan te bepalen
+- Gratis, vrijblijvende intake om doelen en behandelplan te bepalen
 
 Alle prijzen zijn inclusief BTW. Kuren zijn persoonsgebonden en niet overdraagbaar.
 
@@ -117,16 +117,16 @@ Esthetische LPG-behandelingen worden doorgaans niet vergoed door de zorgverzeker
 
 ## Pagina's
 
-- https://mymiracle.nl — Homepage
-- https://mymiracle.nl/behandelingen — Overzicht behandelingen
-- https://mymiracle.nl/behandelingen/lichaam — LPG Lichaamsbehandeling
-- https://mymiracle.nl/behandelingen/gezicht — LPG Gezichtsbehandeling
-- https://mymiracle.nl/lpg-endermologie — Wat is LPG Endermologie?
-- https://mymiracle.nl/prijzen — Prijzen
-- https://mymiracle.nl/over-mij — Over Kader Tufan
-- https://mymiracle.nl/contact — Contact & Afspraak
-- https://mymiracle.nl/privacy-policy — Privacy Policy
-- https://mymiracle.nl/algemene-voorwaarden — Algemene Voorwaarden
+- https://mymiracle.nl - Homepage
+- https://mymiracle.nl/behandelingen - Overzicht behandelingen
+- https://mymiracle.nl/behandelingen/lichaam - LPG Lichaamsbehandeling
+- https://mymiracle.nl/behandelingen/gezicht - LPG Gezichtsbehandeling
+- https://mymiracle.nl/lpg-endermologie - Wat is LPG Endermologie?
+- https://mymiracle.nl/prijzen - Prijzen
+- https://mymiracle.nl/over-mij - Over Kader Tufan
+- https://mymiracle.nl/contact - Contact & Afspraak
+- https://mymiracle.nl/privacy-policy - Privacy Policy
+- https://mymiracle.nl/algemene-voorwaarden - Algemene Voorwaarden
 `;
   return new NextResponse(content, {
     headers: { 'Content-Type': 'text/plain; charset=utf-8' },

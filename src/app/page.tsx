@@ -312,7 +312,11 @@ export default function HomePage() {
             <ul className="space-y-6">
               {usps.map((usp) => (
                 <li key={usp.title} className="flex items-start gap-4">
-                  <span className="mt-1 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#4a1a7a] text-xs text-white">✦</span>
+                  <span className="mt-1 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#4a1a7a] text-white">
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="m5 12 5 5L19 7" />
+                    </svg>
+                  </span>
                   <div>
                     <p className="font-semibold text-[#1a0a2e]">{usp.title}</p>
                     <p className="mt-0.5 text-sm text-[#1c1c1e]/65">{usp.desc}</p>

@@ -34,3 +34,40 @@ h5,
 h6 {
   font-family: var(--font-serif), Georgia, serif;
 }
+
+/* ── Craft-basis (agency-foundation) ─────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid #4a1a7a;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+::selection {
+  background: #4a1a7a;
+  color: #faf7f4;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
