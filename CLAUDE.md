@@ -60,7 +60,7 @@ Voer aan het einde van elke sessie altijd de volgende stappen uit zonder dat Ser
 
 - **Next.js 16.2.4 → 16.2.6** — SSRF (CVSS 8.6), middleware bypass (×4), DoS, XSS CVE's gedicht
 - **Security headers** in `next.config.ts` — HSTS, X-Frame-Options, Referrer-Policy, Permissions-Policy, Cache-Control
-- **Content-Security-Policy** — strikt, alleen `images.unsplash.com` als externe `img-src`, `frame-ancestors 'none'`
+- **Content-Security-Policy** — strikt, alleen `images.unsplash.com` als externe `img-src`, `frame-src https://www.google.com` (Maps-embed op /contact), `frame-ancestors 'none'`
 - **`poweredByHeader: false`** — lekt geen `X-Powered-By: Next.js` meer
 - **HTML-escaping** (`escapeHtml`) op alle gebruikersinput in `src/app/api/contact/route.ts`
 - **Rate limiting** — `src/lib/rate-limit.ts`; max 5 requests per 10 minuten per IP; `429 + Retry-After`
@@ -75,6 +75,13 @@ Voer aan het einde van elke sessie altijd de volgende stappen uit zonder dat Ser
   - Afzender: `kader@mymiracle.nl` (My Miracle)
   - Ontvanger: `kader@mymiracle.nl`
   - Env var: `BREVO_API_KEY` (vervangt `RESEND_API_KEY`)
+
+### Gedaan — Craft-retrofit (2026-06-12)
+
+- **globals.css** — focus-visible (paarse outline), `::selection`, `text-wrap: balance` op h1-h3, `prefers-reduced-motion` fallback (incl. `scroll-behavior: auto`)
+- **Reduced motion** — `AnimatedSection` en `FaqAccordion` gebruiken `useReducedMotion` van framer-motion
+- **AI-tells verwijderd** — emoji-iconen op /contact en het ✦-USP-vinkje vervangen door inline SVG; pastel border-left callouts in kennisbank omgezet naar volledige subtiele border; em-dashes uit algemene voorwaarden en llms-full.txt
+- **Maps-fix** — CSP `frame-src` toegevoegd; de Google Maps-embed op /contact was tot dan toe geblokkeerd (leeg grijs vlak)
 
 ### To do
 
