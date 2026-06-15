@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Playfair_Display, DM_Sans } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
@@ -87,6 +88,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="nl" className={`${playfair.variable} ${dmSans.variable}`}>
       <body className="flex min-h-screen flex-col antialiased">
+        <Script
+          src="https://analytics.stackwerk.nl/script.js"
+          data-website-id="651997c9-257e-4d49-ab8c-3fea2b4eaac6"
+          strategy="afterInteractive"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
