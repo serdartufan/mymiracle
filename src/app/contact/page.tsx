@@ -89,7 +89,7 @@ export default function ContactPage() {
             {/* Google Maps embed */}
             <div className="h-52 overflow-hidden rounded-2xl bg-[#1c1c1e]/5">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2452.1!2d4.2717!3d52.0546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5b72a5a9b1b1b%3A0x0!2sKnobbelzwaansingel+109%2C+2496+LN+Den+Haag!5e0!3m2!1snl!2snl!4v1"
+                src="https://www.google.com/maps?q=Bezuidenhoutseweg+161,+2594+AG+Den+Haag&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

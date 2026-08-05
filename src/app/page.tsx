@@ -13,36 +13,6 @@ export const metadata: Metadata = {
   },
 };
 
-const localBusinessSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'HealthAndBeautyBusiness',
-  name: 'My Miracle',
-  description: 'Gecertificeerd LPG Endermologie centrum voor lichaam en gezicht in Den Haag.',
-  url: 'https://mymiracle.nl',
-  email: 'kader@mymiracle.nl',
-  image: 'https://mymiracle.nl/MyMiracle_Full_Color.svg',
-  priceRange: '€€',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'Bezuidenhoutseweg 161',
-    addressLocality: 'Den Haag',
-    postalCode: '2594 AG',
-    addressCountry: 'NL',
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: 52.0705,
-    longitude: 4.3007,
-  },
-  openingHoursSpecification: {
-    '@type': 'OpeningHoursSpecification',
-    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-    opens: '09:00',
-    closes: '18:00',
-  },
-  areaServed: 'Den Haag',
-};
-
 const trustItems = [
   {
     title: 'Gecertificeerd LPG centrum',
@@ -131,11 +101,6 @@ function StarRating() {
 export default function HomePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
-
       {/* ── Hero ── */}
       <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#1a0a2e]">
         <Image

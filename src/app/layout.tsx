@@ -20,9 +20,12 @@ const dmSans = DM_Sans({
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'HealthAndBeautyBusiness',
+  '@id': 'https://mymiracle.nl/#localbusiness',
   name: 'My Miracle',
   url: 'https://mymiracle.nl',
   email: 'kader@mymiracle.nl',
+  image: 'https://mymiracle.nl/MyMiracle_Full_Color.svg',
+  logo: 'https://mymiracle.nl/MyMiracle_Full_Color.svg',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Bezuidenhoutseweg 161',
