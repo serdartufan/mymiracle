@@ -83,10 +83,31 @@ Voer aan het einde van elke sessie altijd de volgende stappen uit zonder dat Ser
 - **AI-tells verwijderd** — emoji-iconen op /contact en het ✦-USP-vinkje vervangen door inline SVG; pastel border-left callouts in kennisbank omgezet naar volledige subtiele border; em-dashes uit algemene voorwaarden en llms-full.txt
 - **Maps-fix** — CSP `frame-src` toegevoegd; de Google Maps-embed op /contact was tot dan toe geblokkeerd (leeg grijs vlak)
 
-### To do
+### Gedaan — SEO Spoor A: technische quick wins (2026-08-05)
 
-- Teksten uitbreiden op behandelingspagina's (min. 800 woorden per pagina)
-- Echte foto's toevoegen (Unsplash-placeholders vervangen door eigen beeldmateriaal)
-- Reviews verzamelen via Google Business Profile
-- Externe bronlinks toevoegen aan kennisbank artikelen voor E-E-A-T signalering
-- `BREVO_API_KEY` instellen op VPS (`/var/www/mymiracle/.env`) als dat nog niet is gedaan
+Aanleiding: site rankte nergens. Volledige SEO-analyse (technisch + tekstueel) uitgevoerd; techniek bleek grotendeels goed, hoofdoorzaak = domeinleeftijd + zwakke lokale autoriteit. Spoor A doorgevoerd en live:
+
+- **NAP-fix** — Maps-embed op `/contact` wees naar verkeerd adres (Knobbelzwaansingel) → gecorrigeerd naar **Bezuidenhoutseweg 161** (query-embed i.p.v. pb-string).
+- **Telefoonnummer 06 46 06 13 86** scrape-resistent toegevoegd op `/contact` via client-component `PhoneReveal` (nummer staat NIET in server-HTML — bewust, tegen telemarketeer-scrapers; wel zichtbaar voor bezoekers + Googlebot). Bewust NIET in JSON-LD (te scrapebaar).
+- **LocalBusiness-schema** — dubbel schema op home (layout + page.tsx) geconsolideerd naar 1×; verrijkt met `@id`, `image`, `logo`, en `sameAs` → Google Bedrijfsprofiel (`https://maps.app.goo.gl/1LLKRYBH4iAtzusA7`, geverifieerd profiel).
+- **og:image** — ontbrak volledig → branded 1200×630 via `src/app/opengraph-image.tsx` (Next-conventie, genereert og:image + twitter:image sitebreed).
+- **Canonicalisatie** — www/http/https/non-www leefden alle 4 naast elkaar (Google indexeerde www terwijl canonical non-www is). Opgelost in `src/middleware.ts`: www→non-www + http→https (protocol uit Cloudflare `CF-Visitor`-header) → alles 301 naar `https://mymiracle.nl`. Getest live.
+
+### To do — SEO vervolg (Spoor B + C)
+
+**Spoor B — lokale autoriteit (grootste hefboom):**
+- Reviews verzamelen via het (geverifieerde) Google Bedrijfsprofiel; daarna `aggregateRating` in schema toevoegen
+- Lokale citaties/vermeldingen opbouwen (consistente NAP)
+
+**Spoor C — content:**
+- Zwakke H1's herschrijven site-breed (home/behandelingen/lichaam/gezicht/prijzen/contact hebben slogan-/generieke H1 zonder zoekwoord; keyword staat nu in eyebrow-`<p>`)
+- Dunne pagina's uitbouwen: `/behandelingen` (~250 w, linkt niet naar eigen subpagina's lichaam/gezicht → kannibaliseert `/lpg-endermologie`) en `/over-mij` (~190 w, generiek, zwakke E-E-A-T)
+- Interne links op dienstenpagina's (lichaam/gezicht/lpg linken alleen naar `/contact`)
+- Placeholder-testimonials op home vervangen door echte reviews
+- Ongestaafde claims op `/lpg-endermologie` (FDA/100+ studies) staven of nuanceren
+
+**Overig (bestaand):**
+- Behandelingsteksten min. 800 woorden per pagina
+- Echte foto's i.p.v. Unsplash-placeholders (`images` in `content.ts`)
+- Externe bronlinks in kennisbank voor E-E-A-T
+- `BREVO_API_KEY` op VPS controleren
