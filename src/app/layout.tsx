@@ -48,6 +48,7 @@ const organizationSchema = {
   description:
     'Gecertificeerd LPG Endermologie centrum in Den Haag voor lichaam en gezicht. Officieel LPG partner.',
   areaServed: 'Den Haag',
+  sameAs: ['https://maps.app.goo.gl/1LLKRYBH4iAtzusA7'],
 };
 
 export const metadata: Metadata = {
