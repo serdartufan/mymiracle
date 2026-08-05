@@ -93,21 +93,28 @@ Aanleiding: site rankte nergens. Volledige SEO-analyse (technisch + tekstueel) u
 - **og:image** — ontbrak volledig → branded 1200×630 via `src/app/opengraph-image.tsx` (Next-conventie, genereert og:image + twitter:image sitebreed).
 - **Canonicalisatie** — www/http/https/non-www leefden alle 4 naast elkaar (Google indexeerde www terwijl canonical non-www is). Opgelost in `src/middleware.ts`: www→non-www + http→https (protocol uit Cloudflare `CF-Visitor`-header) → alles 301 naar `https://mymiracle.nl`. Getest live.
 
-### To do — SEO vervolg (Spoor B + C)
+### To do — SEO (geprioriteerd)
 
-**Spoor B — lokale autoriteit (grootste hefboom):**
-- Reviews verzamelen via het (geverifieerde) Google Bedrijfsprofiel; daarna `aggregateRating` in schema toevoegen
-- Lokale citaties/vermeldingen opbouwen (consistente NAP)
+**Spoor B — lokale autoriteit (grootste hefboom, meeste rankingimpact):**
+- [ ] Reviews verzamelen via het geverifieerde Google Bedrijfsprofiel (klanten actief vragen; review-link delen)
+- [ ] Subtiele review-CTA / reviews tonen op de site zodra er reviews zijn
+- [ ] `aggregateRating` toevoegen aan LocalBusiness-schema (pas als er echte reviews zijn — nooit faken)
+- [ ] Lokale citaties/vermeldingen opbouwen met consistente NAP (bv. lokale gidsen, branchesites)
 
-**Spoor C — content:**
-- Zwakke H1's herschrijven site-breed (home/behandelingen/lichaam/gezicht/prijzen/contact hebben slogan-/generieke H1 zonder zoekwoord; keyword staat nu in eyebrow-`<p>`)
-- Dunne pagina's uitbouwen: `/behandelingen` (~250 w, linkt niet naar eigen subpagina's lichaam/gezicht → kannibaliseert `/lpg-endermologie`) en `/over-mij` (~190 w, generiek, zwakke E-E-A-T)
-- Interne links op dienstenpagina's (lichaam/gezicht/lpg linken alleen naar `/contact`)
-- Placeholder-testimonials op home vervangen door echte reviews
-- Ongestaafde claims op `/lpg-endermologie` (FDA/100+ studies) staven of nuanceren
+**Spoor C — content & interne structuur:**
+- [ ] Zwakke H1's herschrijven (home/behandelingen/lichaam/gezicht/prijzen/contact: slogan-/generieke H1 zonder zoekwoord; keyword staat nu in eyebrow-`<p>`) — snelste tekstuele winst
+- [ ] `/behandelingen` uitbouwen + laten linken naar subpagina's lichaam/gezicht (kaarten zijn nu geen links); overlap met `/lpg-endermologie` oplossen (kannibalisatie)
+- [ ] `/over-mij` verrijken (~190 w, generiek): concrete ervaring, opleiding, jaartallen, lokale binding → E-E-A-T
+- [ ] Interne cross-links op dienstenpagina's (lichaam/gezicht/lpg linken nu alleen naar `/contact`)
+- [ ] Placeholder-testimonials op home vervangen door echte reviews (`TODO` in `content.ts`)
+- [ ] Ongestaafde claims op `/lpg-endermologie` (FDA-erkend / 100+ studies) staven met bron of nuanceren
+- [ ] Behandelingsteksten uitbreiden naar min. 800 woorden per pagina
 
-**Overig (bestaand):**
-- Behandelingsteksten min. 800 woorden per pagina
-- Echte foto's i.p.v. Unsplash-placeholders (`images` in `content.ts`)
-- Externe bronlinks in kennisbank voor E-E-A-T
-- `BREVO_API_KEY` op VPS controleren
+**Overig / assets:**
+- [ ] Echte foto's i.p.v. Unsplash-placeholders (`images` in `content.ts`, meerdere `TODO`-markers)
+- [ ] Externe bronlinks toevoegen aan kennisbank-artikelen voor E-E-A-T
+- [ ] `dateModified` in kennisbank-artikelen loskoppelen van `datePublished` (toont nu "bijgewerkt" terwijl datums gelijk zijn)
+- [ ] `BREVO_API_KEY` op VPS controleren (`/var/www/mymiracle/.env`)
+
+**Losse actie voor Serdar (buiten de code):**
+- [ ] Even checken in GSC (Coverage/Pagina's) hoeveel pagina's Google écht geïndexeerd heeft, nu de canonicalisatie is rechtgetrokken
